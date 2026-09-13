@@ -1,0 +1,1826 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aprovação Correios — Agente/Carteiro</title>
+<meta name="description" content="Cursinho completo para Agente dos Correios / Carteiro (nível médio), banca IBFC: edital verticalizado com pegadinhas, aulas do zero, plano com horas por dia, simulados que corrigem sozinho e flashcards. Português, Matemática, Informática, Conhecimentos Gerais e Código de Ética dos Correios.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Public+Sans:wght@400;500;600;700;800&display=swap">
+<style>
+  /* ===== Tema: água/saneamento (DMAE). Azul institucional + verde "tratada".
+     Claro por padrão; escuro via prefers-color-scheme e [data-theme]. ===== */
+  :root{
+    --bg:#eef3f6; --paper:#ffffff; --paper-2:#f4f8fa;
+    --ink:#122430; --ink-2:#3a5361; --muted:#647d8b; --line:#d7e2e8; --line-2:#e6eef2;
+    --blue:#0d5c86; --blue-2:#1785bf; --blue-soft:#e2f0f8;
+    --teal:#0e8f9c; --green:#1a8f4c; --green-soft:#e3f5ea;
+    --amber:#b45309; --amber-soft:#fbeede; --red:#c0392b; --red-soft:#fbe7e4;
+    --shadow:0 1px 2px rgba(18,36,48,.06),0 8px 24px rgba(18,36,48,.06);
+    --wrongbg:#fbe7e4; --rightbg:#e3f5ea;
+  }
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+    --bg:#0b1418; --paper:#0f1b21; --paper-2:#132430;
+    --ink:#e7eef2; --ink-2:#b3c4cd; --muted:#8399a4; --line:#22343d; --line-2:#1a2a32;
+    --blue:#3ea6dd; --blue-2:#57b6e8; --blue-soft:#12303f;
+    --teal:#2bb6c2; --green:#43c07e; --green-soft:#123026;
+    --amber:#e0a45c; --amber-soft:#2e2410; --red:#e8796c; --red-soft:#2e1613;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35);
+    --wrongbg:#2e1613; --rightbg:#123026;
+  }}
+  :root[data-theme="dark"]{
+    --bg:#0b1418; --paper:#0f1b21; --paper-2:#132430;
+    --ink:#e7eef2; --ink-2:#b3c4cd; --muted:#8399a4; --line:#22343d; --line-2:#1a2a32;
+    --blue:#3ea6dd; --blue-2:#57b6e8; --blue-soft:#12303f;
+    --teal:#2bb6c2; --green:#43c07e; --green-soft:#123026;
+    --amber:#e0a45c; --amber-soft:#2e2410; --red:#e8796c; --red-soft:#2e1613;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35);
+    --wrongbg:#2e1613; --rightbg:#123026;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:70px;overflow-x:clip}
+  body{overflow-x:clip}
+  img,table,pre,.tw{max-width:100%}
+  /* impede que textos longos (URLs, código) estourem a largura no celular */
+  p,li,td,th,dd,dt,h1,h2,h3,h4,span,a,b,strong,em,label{overflow-wrap:break-word}
+  code{white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-word}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:"Public Sans",system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,h4{font-family:"Lora",Georgia,serif;line-height:1.2;text-wrap:balance}
+  a{color:var(--blue)}
+  .serif{font-family:"Lora",Georgia,serif}
+
+  /* topbar */
+  .top{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .top .in{max-width:1180px;margin:0 auto;display:flex;align-items:center;gap:12px;padding:10px 18px}
+  .brand{display:flex;align-items:center;gap:9px;font-weight:800;letter-spacing:.01em}
+  .brand .drop{width:26px;height:26px;border-radius:50% 50% 50% 8px;transform:rotate(45deg);background:linear-gradient(135deg,var(--blue-2),var(--teal));box-shadow:inset 0 0 0 2px rgba(255,255,255,.25)}
+  .brand b{color:var(--blue)}
+  .top .sp{flex:1}
+  .cd{font-size:12.5px;color:var(--ink-2);font-weight:600;border:1px solid var(--line);border-radius:999px;padding:5px 11px;white-space:nowrap}
+  .cd b{color:var(--red);font-variant-numeric:tabular-nums}
+  .tbtn{border:1px solid var(--line);background:var(--paper);color:var(--ink-2);border-radius:9px;padding:6px 9px;cursor:pointer;font-size:14px}
+  .menub{display:none}
+
+  .wrap{max-width:1180px;margin:0 auto;padding:0 18px;display:grid;grid-template-columns:236px 1fr;gap:30px;align-items:start}
+  /* TOC */
+  nav.toc{position:sticky;top:64px;align-self:start;max-height:calc(100vh - 80px);overflow:auto;padding:18px 0 40px;font-size:14px}
+  nav.toc a{display:block;color:var(--ink-2);text-decoration:none;padding:6px 10px;border-radius:7px;border-left:2px solid transparent}
+  nav.toc a:hover{background:var(--paper-2);color:var(--ink)}
+  nav.toc a.on{color:var(--blue);border-left-color:var(--blue);background:var(--blue-soft);font-weight:600}
+  nav.toc .grp{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin:16px 10px 4px;font-weight:700}
+  main{min-width:0;padding-bottom:80px}
+
+  section{scroll-margin-top:70px;margin:34px 0}
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:22px 24px;box-shadow:var(--shadow)}
+  .eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin:0 0 6px}
+  h2.sec{font-size:clamp(22px,3.2vw,30px);margin:0 0 14px;color:var(--ink);border-bottom:2px solid var(--blue);padding-bottom:8px;display:inline-block}
+  h3{font-size:19px;margin:22px 0 8px;color:var(--blue)}
+  h4{font-size:15.5px;margin:16px 0 6px}
+  p{margin:0 0 12px;max-width:72ch}
+  ul,ol{margin:0 0 12px;padding-left:22px}
+  li{margin:5px 0;max-width:72ch}
+  strong{color:var(--ink)}
+  .lead{font-size:17px;color:var(--ink-2)}
+  code{background:var(--paper-2);border:1px solid var(--line-2);border-radius:5px;padding:1px 5px;font-size:.9em}
+
+  /* hero */
+  .hero{position:relative;overflow:hidden;border-radius:20px;border:1px solid var(--line);background:
+     radial-gradient(120% 90% at 88% -10%, color-mix(in srgb,var(--blue-2) 24%, transparent), transparent 60%),
+     linear-gradient(180deg,var(--paper),var(--paper-2));padding:34px 28px;margin-top:22px}
+  .hero h1{font-size:clamp(28px,5vw,46px);margin:8px 0 6px;letter-spacing:-.01em}
+  .hero h1 em{font-style:normal;color:var(--blue)}
+  .hero .sub{font-size:17px;color:var(--ink-2);max-width:60ch}
+  .facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+  .fact{background:var(--paper);border:1px solid var(--line);border-radius:11px;padding:9px 13px;font-size:13.5px}
+  .fact b{display:block;font-size:16px;color:var(--blue);font-family:"Lora",serif}
+
+  /* alert */
+  .alert{border-radius:14px;padding:14px 16px;margin:14px 0;border:1px solid;font-size:14.5px}
+  .alert b{font-weight:800}
+  .alert.red{background:var(--red-soft);border-color:color-mix(in srgb,var(--red) 40%,var(--line))}
+  .alert.amber{background:var(--amber-soft);border-color:color-mix(in srgb,var(--amber) 40%,var(--line))}
+  .alert.blue{background:var(--blue-soft);border-color:color-mix(in srgb,var(--blue) 30%,var(--line))}
+  .alert .tag{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+  .alert.red .tag{color:var(--red)} .alert.amber .tag{color:var(--amber)} .alert.blue .tag{color:var(--blue)}
+
+  /* tables */
+  .tw{overflow-x:auto;border:1px solid var(--line);border-radius:12px;margin:12px 0}
+  table{width:100%;border-collapse:collapse;font-size:14px;min-width:520px}
+  th,td{text-align:left;vertical-align:top;padding:9px 12px;border-bottom:1px solid var(--line-2)}
+  th{background:var(--paper-2);color:var(--blue);font-weight:700;position:sticky;top:0}
+  tbody tr:last-child td{border-bottom:0}
+  td.k{font-weight:600;color:var(--ink);white-space:nowrap}
+  .pri{font-weight:800;font-size:11px;padding:2px 7px;border-radius:6px}
+  .p1{background:var(--red-soft);color:var(--red)} .p2{background:var(--amber-soft);color:var(--amber)} .p3{background:var(--paper-2);color:var(--muted)}
+  .peg{color:var(--amber)}
+
+  /* weight bars */
+  .weights{display:grid;gap:9px;margin:10px 0}
+  .wrow{display:grid;grid-template-columns:200px 1fr 54px;gap:12px;align-items:center;font-size:14px}
+  .bar{height:14px;background:var(--paper-2);border-radius:999px;overflow:hidden;border:1px solid var(--line-2)}
+  .bar>i{display:block;height:100%;background:linear-gradient(90deg,var(--blue-2),var(--teal));border-radius:999px}
+  @media(max-width:560px){.wrow{grid-template-columns:1fr;gap:3px}.wrow .bar{grid-row:2}}
+
+  /* simulado */
+  .q{border:1px solid var(--line);border-radius:13px;padding:16px 18px;margin:14px 0;background:var(--paper)}
+  .q .qn{font-weight:700;color:var(--blue);font-size:13px;letter-spacing:.02em}
+  .q .qt{margin:4px 0 12px;font-weight:500}
+  .opt{display:flex;gap:10px;align-items:flex-start;padding:9px 12px;border:1px solid var(--line);border-radius:10px;margin:6px 0;cursor:pointer;transition:background .12s,border-color .12s}
+  .opt:hover{background:var(--paper-2)}
+  .opt input{margin-top:3px}
+  .opt .lt{font-weight:700;color:var(--ink-2)}
+  .opt.right{background:var(--rightbg);border-color:var(--green)}
+  .opt.wrong{background:var(--wrongbg);border-color:var(--red)}
+  .expl{display:none;margin-top:10px;border-left:3px solid var(--blue);background:var(--paper-2);padding:9px 13px;border-radius:0 8px 8px 0;font-size:14px}
+  .expl.show{display:block}
+  .expl b.ok{color:var(--green)} .expl b.no{color:var(--red)}
+  .passage{background:var(--paper-2);border:1px solid var(--line-2);border-left:3px solid var(--teal);border-radius:0 10px 10px 0;padding:12px 16px;margin:10px 0;font-style:italic}
+  .simbar{position:sticky;bottom:0;background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(6px);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin-top:16px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;box-shadow:var(--shadow)}
+  .btn{background:var(--blue);color:#fff;border:0;border-radius:10px;padding:11px 20px;font-weight:700;font-size:15px;cursor:pointer;font-family:inherit}
+  .btn:hover{background:var(--blue-2)}
+  .btn.ghost{background:transparent;color:var(--blue);border:1px solid var(--line)}
+  .score{font-weight:800;font-size:16px}
+  .score b{font-family:"Lora",serif;font-size:20px}
+  .blocklabel{font-family:"Lora",serif;font-size:17px;color:var(--teal);margin:22px 0 4px;font-weight:700}
+
+  /* flashcards */
+  .fctools{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:8px 0 14px}
+  .fc{border:1px solid var(--line);border-radius:13px;padding:16px 18px;background:var(--paper);cursor:pointer;min-height:96px;display:flex;flex-direction:column;justify-content:center;box-shadow:var(--shadow)}
+  .fc .fq{font-weight:600}
+  .fc .fn{font-size:12px;color:var(--muted);font-weight:700}
+  .fc .fa{display:none;margin-top:10px;padding-top:10px;border-top:1px dashed var(--line);color:var(--ink-2)}
+  .fc.open .fa{display:block}
+  .fc .hint{font-size:12px;color:var(--muted);margin-top:6px}
+  .fc.open .hint{display:none}
+
+  /* aula (ensino antes do treino) */
+  .aula{background:var(--blue-soft);border:1px solid color-mix(in srgb,var(--blue) 25%,var(--line));border-radius:12px;padding:14px 16px;margin:6px 0 14px;font-size:14.5px;line-height:1.65}
+  .aula b{color:var(--ink)}
+  .matfilter{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 4px}
+  .matfilter button{border:1px solid var(--line);background:var(--paper);color:var(--ink-2);border-radius:999px;padding:6px 13px;cursor:pointer;font:inherit;font-size:13.5px}
+  .matfilter button.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+  .matdiv{font-family:"Lora",serif;color:var(--teal);font-size:20px;margin:28px 2px 2px;padding-top:14px;border-top:2px solid var(--line)}
+  /* central de estudos (hub) */
+  .hubgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:14px 0}
+  @media(max-width:640px){.hubgrid{grid-template-columns:1fr}}
+  .hubc{display:block;border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:var(--ink);background:var(--paper-2);transition:border-color .12s,transform .12s}
+  .hubc:hover{border-color:var(--blue);transform:translateY(-1px)}
+  .hubc .hn{display:inline-flex;width:24px;height:24px;align-items:center;justify-content:center;background:var(--blue);color:#fff;border-radius:50%;font-weight:800;font-size:13px;margin-bottom:6px;font-family:"Public Sans",sans-serif}
+  .hubc b{display:block;color:var(--blue);margin:2px 0 4px}
+  .hubc .d{font-size:13.5px;color:var(--ink-2)}
+  /* plano checklist */
+  .chk{display:flex;gap:10px;align-items:flex-start;padding:7px 0;border-bottom:1px solid var(--line-2)}
+  .chk input{margin-top:5px;width:16px;height:16px;accent-color:var(--green);flex:0 0 auto}
+  .chk label{cursor:pointer}
+  .chk.done label{color:var(--muted);text-decoration:line-through}
+  h4.wk{margin:22px 0 4px;color:var(--blue);font-size:.98rem;border-bottom:2px solid var(--line-2);padding-bottom:5px}
+  .callout{background:var(--paper-2);border:1px solid var(--line-2);border-left:4px solid var(--green);border-radius:12px;padding:16px 20px}
+  /* domínio por prioridade */
+  .prband{display:flex;align-items:center;gap:12px;margin:30px 0 6px}
+  .prband .tag{font-weight:800;font-size:.85rem;color:#fff;padding:4px 12px;border-radius:20px;letter-spacing:.03em}
+  .prband.p1 .tag{background:var(--p1,#c0392b)} .prband.p2 .tag{background:var(--p2,#d68910)} .prband.p3 .tag{background:var(--p3,#5d6d7e)}
+  .prband h3{margin:0;font-size:1.05rem;color:var(--ink)}
+  .prband .cnt{margin-left:auto;font-size:.82rem;color:var(--muted)}
+  .domgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:8px}
+  @media(max-width:760px){.domgrid{grid-template-columns:1fr}}
+  .domc{background:var(--paper-2);border:1px solid var(--line-2);border-radius:12px;padding:14px 16px}
+  .domc h4{margin:0 0 7px;color:var(--blue);font-size:1rem;display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+  .domc h4 .mt{font-size:.72rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;white-space:nowrap}
+  .domc p{margin:0 0 8px;font-size:.93rem;line-height:1.5}
+  .domc .na{margin:0;font-size:.9rem;background:var(--paper);border-left:3px solid var(--green);border-radius:0 8px 8px 0;padding:8px 11px}
+  .domc .na b{color:var(--green)}
+  .domc .ap{margin:0 0 8px;font-size:.92rem;line-height:1.55;background:var(--blue-soft);border-left:3px solid var(--blue);border-radius:0 8px 8px 0;padding:8px 11px}
+  .domc .ap b{color:var(--blue)}
+  /* painel Revise seus erros */
+  .errpanel{margin-top:16px;background:var(--paper-2);border:1px solid var(--line-2);border-left:4px solid var(--p1,#c0392b);border-radius:12px;padding:14px 18px}
+  .errpanel h4{margin:0 0 6px;color:var(--p1,#c0392b);font-size:1.05rem}
+  .errpanel>p{margin:0 0 6px;font-size:.93rem}
+  .errpanel ol{margin:8px 0 0;padding-left:22px}
+  .errpanel li{margin-bottom:13px;line-height:1.5}
+  .errpanel .eq{font-style:italic;color:var(--ink-2);margin:3px 0}
+  .errpanel .ei{background:var(--paper);border-radius:8px;padding:7px 11px;margin-top:4px;font-size:.92rem}
+  .errpanel .you{color:var(--p1,#c0392b)} .errpanel .ok{color:var(--green)}
+  .errpanel .tip{font-size:.86rem;color:var(--muted);margin:10px 0 0}
+  .errpanel a{font-weight:700;color:var(--blue)}
+  .errpanel.zero{border-left-color:var(--green)} .errpanel.zero h4{color:var(--green)}
+  /* cronômetro */
+  .timer{display:inline-flex;align-items:center;gap:8px;margin-left:auto}
+  .timer .tdisp{font-variant-numeric:tabular-nums;font-size:15px;color:var(--ink-2);white-space:nowrap;font-family:"Lora",serif}
+  .timer .tdisp.low{color:var(--red)}
+  .timer .tbtn2{padding:8px 12px;font-size:13px}
+  /* meu desempenho */
+  .desempenho .dhint{font-size:14px;color:var(--ink-2);margin:0}
+  .desempenho .dbest{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:2px 0 10px}
+  .desempenho .dlbl{font-weight:700;color:var(--ink)}
+  .desempenho .dchip{background:var(--green-soft);color:var(--ink);border:1px solid color-mix(in srgb,var(--green) 30%,var(--line));border-radius:999px;padding:4px 11px;font-size:13px}
+  .desempenho .dlast{margin:0 0 10px;padding-left:20px;font-size:14px}
+  .desempenho .dlast li{margin:3px 0}
+  .desempenho .dclear{padding:7px 12px;font-size:13px}
+  /* próxima ação (recomendação personalizada) */
+  .proxima{background:var(--green-soft);border:1px solid color-mix(in srgb,var(--green) 30%,var(--line));border-left:4px solid var(--green);border-radius:12px;padding:14px 16px;margin:2px 0 14px}
+  .proxima h4{margin:0 0 4px;color:var(--green);font-size:1rem}
+  .proxima p{margin:0 0 10px;font-size:.95rem;max-width:none}
+  .proxima .btn{padding:9px 16px;font-size:14px;text-decoration:none;display:inline-block}
+  .proxima .foco{font-size:13px;color:var(--ink-2);margin:8px 0 0}
+  .proxima[hidden]{display:none!important}
+  /* caderno de erros */
+  .dhint{font-size:14px;color:var(--ink-2)}
+  .cadtools{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 6px}
+  .cadtools .btn{padding:8px 13px;font-size:13.5px}
+  .cadcount{font-family:"Public Sans",sans-serif;font-size:14px;color:var(--muted);font-weight:700}
+  /* progresso do cronograma */
+  .cprog{margin:8px 0 14px}
+  .cprow{display:grid;grid-template-columns:200px 1fr auto;gap:12px;align-items:center;font-size:13.5px}
+  .cbar{height:13px;background:var(--paper-2);border:1px solid var(--line-2);border-radius:999px;overflow:hidden}
+  .cbar>i{display:block;height:100%;background:linear-gradient(90deg,var(--green),var(--teal));border-radius:999px;transition:width .3s}
+  @media(max-width:560px){.cprog .cprow{grid-template-columns:1fr;gap:3px}.cprog .cbar{grid-row:2}}
+  @media(max-width:560px){
+    .timer{margin-left:0;width:100%;justify-content:space-between;order:3}
+    .q .qt{font-size:15.5px} .opt{padding:11px 13px}
+    .card{padding:18px 15px}
+  }
+
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:720px){.grid2{grid-template-columns:1fr}}
+  .mini{background:var(--paper-2);border:1px solid var(--line-2);border-radius:11px;padding:14px 16px}
+  .mini h4{margin-top:0;color:var(--blue)}
+  footer{border-top:1px solid var(--line);color:var(--muted);font-size:13px;padding:24px 0;text-align:center}
+  .back{position:fixed;right:16px;bottom:16px;z-index:40;background:var(--blue);color:#fff;border:0;border-radius:50%;width:44px;height:44px;font-size:18px;cursor:pointer;box-shadow:var(--shadow);display:none}
+  .back.show{display:block}
+  /* login / perfis */
+  .authwall{position:fixed;inset:0;z-index:100;background:var(--bg);display:flex;align-items:flex-start;justify-content:center;padding:24px 18px;overflow-y:auto;-webkit-overflow-scrolling:touch}
+  .authcard{background:var(--paper);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:26px 24px;max-width:390px;width:100%;margin:auto}
+  :root.authlock,:root.authlock body{overflow:hidden;height:100%}
+  .authwall[hidden]{display:none!important}
+  .authbrand{display:flex;align-items:center;gap:9px;font-weight:800;font-size:18px;font-family:"Lora",serif}
+  .authbrand b{color:var(--blue)}
+  .authbrand .drop{width:24px;height:24px;border-radius:50% 50% 50% 8px;transform:rotate(45deg);background:linear-gradient(135deg,var(--blue-2),var(--teal))}
+  .authsub{font-size:14px;color:var(--ink-2);margin:8px 0 16px}
+  .authcard input{width:100%;padding:11px 13px;margin:0 0 10px;border:1px solid var(--line);border-radius:10px;font:inherit;font-size:16px;background:var(--paper);color:var(--ink)}
+  .authcard input:focus{outline:2px solid var(--blue-2);border-color:var(--blue-2)}
+  .pwwrap{position:relative;margin:0 0 10px}
+  .pwwrap input{margin:0!important;padding-right:82px}
+  .pwtoggle{position:absolute;right:6px;top:50%;transform:translateY(-50%);background:none;border:0;color:var(--blue);font:inherit;font-size:13px;font-weight:600;cursor:pointer;padding:6px 8px}
+  .authcard .btn{width:100%;margin-top:2px}
+  .authtoggle{font-size:13.5px;color:var(--ink-2);text-align:center;margin:12px 0 0}
+  .authmsg{background:var(--red-soft);color:var(--red);border-radius:8px;padding:8px 11px;font-size:13.5px;margin-bottom:10px}
+  .authnote{font-size:11.5px;color:var(--muted);margin:16px 0 0;line-height:1.5}
+  .userbox{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--ink-2)}
+  .userbox[hidden]{display:none!important}
+  .userbox #whoami{font-weight:700;color:var(--ink);max-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  @media(max-width:560px){.userbox #whoami{max-width:80px}}
+
+  @media(max-width:900px){
+    .wrap{grid-template-columns:1fr;gap:0}
+    nav.toc{position:fixed;inset:54px 0 0 0;z-index:45;background:var(--paper);max-height:none;overflow-y:auto;padding:14px 18px;display:none;border-right:1px solid var(--line)}
+    nav.toc.open{display:block}
+    .menub{display:inline-block}
+    .cd{display:none}
+    /* sem desfoque (evita "tremer" ao rolar) e barra de Corrigir no fluxo (não flutua) */
+    .top{backdrop-filter:none;background:var(--paper)}
+    .simbar{position:static;backdrop-filter:none;background:var(--paper)}
+    .top .in{padding:9px 14px;gap:8px}
+    .brand{font-size:15px}
+    body.navopen{overflow:hidden}
+  }
+  @media print{
+    .top,nav.toc,.simbar,.back,.fctools,.menub,.authwall,.userbox{display:none!important}
+    html.authlock,html.authlock body{overflow:visible!important;height:auto!important}
+    .wrap{display:block;max-width:none;padding:0}
+    body{background:#fff}
+    .card,.q,.fc,.hero{box-shadow:none;break-inside:avoid}
+    .expl{display:block!important}
+    .fc .fa{display:block!important} .fc .hint{display:none}
+    a{color:inherit;text-decoration:none}
+    section{margin:16px 0}
+  }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.116.0/dist/umd/supabase.js"></script>
+<script>
+  window.DMAE_SLUG="correiosm"; /* identifica ESTE concurso no backend compartilhado */
+  try{ window.sb = window.supabase.createClient(
+    "https://eruszwjnekrvfbtylbuv.supabase.co",
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVydXN6d2puZWtydmZidHlsYnV2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODkxOTM3MTksImV4cCI6MjEwNDc2OTcxOX0.XfxqmgTu9OLI6moAk6XhasQc9RmgI9w-lpbzbHSJqqo",
+    {auth:{persistSession:true,autoRefreshToken:true}}
+  ); }catch(e){ window.sb=null; }
+</script>
+</head>
+<body>
+<div id="authwall" class="authwall">
+  <div class="authcard">
+    <div class="authbrand"><span class="drop" aria-hidden="true"></span> Aprovação <b>Correios</b></div>
+    <p class="authsub">Cada pessoa tem a <strong>sua conta e o seu progresso</strong>, separados. Coloque seu e-mail e uma senha: se já tiver conta, você <strong>entra</strong>; se não tiver, ela é <strong>criada na hora</strong>.</p>
+    <div id="auth-msg" class="authmsg" hidden></div>
+    <input id="au-name" type="text" placeholder="Seu nome (opcional)" autocomplete="name">
+    <input id="au-email" type="email" placeholder="Seu e-mail" autocomplete="username" inputmode="email" autocapitalize="none" autocorrect="off" spellcheck="false">
+    <div class="pwwrap">
+      <input id="au-pass" type="password" placeholder="Sua senha (mín. 4 caracteres)" autocomplete="current-password" autocapitalize="none" autocorrect="off" spellcheck="false">
+      <button type="button" class="pwtoggle" id="au-eye" aria-label="Mostrar senha">Mostrar</button>
+    </div>
+    <button class="btn" id="au-btn" type="button">Entrar / Criar minha conta</button>
+    <p class="authnote">Sua conta funciona em <strong>qualquer aparelho</strong> (celular e computador): o progresso fica salvo <strong>na nuvem</strong> e é privado — ninguém vê o que você errou ou acertou. Use uma senha só para este site (não repita a do banco/e-mail).</p>
+  </div>
+</div>
+<script>
+/* ===== Autenticação Supabase (contas reais, sincroniza entre aparelhos) ===== */
+window.DMAE_KEY=function(k){var u="";try{u=localStorage.getItem("dmae:uid")||"";}catch(e){}return "dmae:u:"+u+":"+k;};
+window.DMAE_logout=function(){var done=function(){try{localStorage.removeItem("dmae:uid");}catch(e){}location.reload();};if(window.sb){window.sb.auth.signOut().then(done,done);}else{done();}};
+(function(){
+  var wall=document.getElementById("authwall");
+  function show(){if(wall){wall.hidden=false;wall.style.display="";}document.documentElement.classList.add("authlock");}
+  function hide(){if(wall){wall.hidden=true;wall.style.display="none";}document.documentElement.classList.remove("authlock");}
+  function msg(t){var m=document.getElementById("auth-msg");if(m){m.textContent=t;m.hidden=!t;}}
+  function busy(b){var x=document.getElementById("au-btn");if(x){x.disabled=b;x.textContent=b?"Entrando…":"Entrar / Criar minha conta";}}
+  show();
+  if(!window.sb){msg("Não consegui conectar ao servidor de contas. Confira sua internet e recarregue a página.");return;}
+  function onLogin(session){
+    try{localStorage.setItem("dmae:uid",session.user.id);}catch(e){}
+    var md=session.user.user_metadata||{};
+    var nome=md.name||md.nome||session.user.email;
+    var who=document.getElementById("whoami"),box=document.getElementById("userbox");
+    if(who)who.textContent=nome; if(box)box.hidden=false;
+    var lo=document.getElementById("logout"); if(lo)lo.onclick=window.DMAE_logout;
+    hide();
+    if(window.DMAE_syncPull)window.DMAE_syncPull();
+  }
+  async function go(){
+    var n=(document.getElementById("au-name").value||"").trim();
+    var e=(document.getElementById("au-email").value||"").trim().toLowerCase();
+    var pw=document.getElementById("au-pass").value||"";
+    if(!e||e.indexOf("@")<0){msg("Digite um e-mail válido.");return;}
+    if(pw.length<4){msg("A senha precisa ter pelo menos 4 caracteres.");return;}
+    msg("");busy(true);
+    try{
+      var r=await window.sb.auth.signInWithPassword({email:e,password:pw});
+      if(r.data&&r.data.session){onLogin(r.data.session);return;}
+      var su=await window.sb.auth.signUp({email:e,password:pw,options:{data:{name:(n||e.split("@")[0])}}});
+      if(su.error){
+        var t=(su.error.message||"").toLowerCase();
+        if(t.indexOf("already")>=0||t.indexOf("registered")>=0){msg("Essa conta já existe, mas a senha não confere. Tente a senha correta.");}
+        else{msg("Não foi possível entrar: "+su.error.message);}
+        busy(false);return;
+      }
+      if(su.data&&su.data.session){onLogin(su.data.session);return;}
+      msg("Conta criada — confirme pelo link no seu e-mail para entrar.");busy(false);
+    }catch(err){msg("Erro de conexão. Tente novamente.");busy(false);}
+  }
+  var b=document.getElementById("au-btn"); if(b)b.onclick=go;
+  ["au-email","au-pass","au-name"].forEach(function(id){var el=document.getElementById(id);if(el)el.addEventListener("keydown",function(ev){if(ev.key==="Enter")go();});});
+  var eye=document.getElementById("au-eye"),pwf=document.getElementById("au-pass");
+  if(eye&&pwf)eye.onclick=function(){var s=pwf.type==="password";pwf.type=s?"text":"password";eye.textContent=s?"Ocultar":"Mostrar";pwf.focus();};
+  window.sb.auth.getSession().then(function(r){if(r.data&&r.data.session)onLogin(r.data.session);});
+})();
+</script>
+<header class="top">
+  <div class="in">
+    <button class="tbtn menub" id="menub" aria-label="Menu">☰</button>
+    <span class="brand"><span class="drop" aria-hidden="true"></span> Aprovação <b>Correios</b></span>
+    <span class="sp"></span>
+    <span class="cd" id="cd">Próximo concurso · <b id="cddays">—</b></span>
+    <span class="userbox" id="userbox" hidden><span id="whoami"></span><button class="tbtn" id="logout" type="button">Sair</button></span>
+    <button class="tbtn" id="theme" aria-label="Alternar tema">◐</button>
+  </div>
+</header>
+
+<div class="wrap">
+  <nav class="toc" id="toc" aria-label="Índice">
+    <div class="grp">Comece aqui</div>
+    <a href="#inicio">Início</a>
+    <a href="#hub">Central de estudos</a>
+    <a href="#plano">Plano de estudos</a>
+    <a href="#memoria">Como fixar na memória</a>
+    <div class="grp">1 · Aprender + treinar</div>
+    <a href="#dominio">Domínio por prioridade</a>
+    <a href="#treinos-sec">Aulas + treinos por tema</a>
+    <div class="grp">2 · Praticar</div>
+    <a href="#antes-sim">Antes de cada simulado</a>
+    <a href="#simulado">Simulado 1</a>
+    <a href="#simulado2">Simulado 2</a>
+    <a href="#simulado3">Simulado 3</a>
+    <a href="#simulado4">Simulado 4</a>
+    <a href="#aleatorio">Simulado aleatório</a>
+    <a href="#especifico">Só Português</a>
+    <div class="grp">3 · Revisar</div>
+    <a href="#caderno">Caderno de erros</a>
+    <a href="#flashcards">Flashcards</a>
+    <a href="#vespera">Revisão de véspera</a>
+    <div class="grp">4 · Consultar</div>
+    <a href="#ficha">Ficha do edital</a>
+    <a href="#portugues">O que estudar (verticalizado)</a>
+    <a href="#mudou">Sobre o edital</a>
+    <a href="#correcoes">Correções</a>
+    <a href="#perfil">Perfil da banca</a>
+    <a href="#fontes">Fontes oficiais</a>
+    <a href="#claude">Tutor no Claude Code</a>
+  </nav>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section id="inicio" class="hero">
+      <p class="eyebrow">Concurso Correios · Agente de Correios / Carteiro · Banca IBFC · Nível Médio</p>
+      <h1>Seu cursinho completo para <em>Agente dos Correios (Carteiro)</em></h1>
+      <p class="sub">Do zero ao dia da prova: edital verticalizado com as pegadinhas, aulas que ensinam passo a passo, simulados que corrigem sozinho, caderno de erros e plano de estudos com horas por dia. Baseado no último edital (IBFC 2024): <b>Português, Matemática, Informática, Conhecimentos Gerais e o Código de Ética dos Correios</b>.</p>
+      <div class="facts">
+        <div class="fact"><b>50</b> questões · múltipla escolha</div>
+        <div class="fact"><b>IBFC</b> · A–D (uma correta)</div>
+        <div class="fact"><b>Ensino Médio</b> completo</div>
+        <div class="fact"><b>Foco</b> Português · Matemática · Informática</div>
+        <div class="fact"><b>~R$ 2.600</b> + benefícios (ref. 2024)</div>
+      </div>
+      <a class="btn" href="#hub" style="margin-top:20px;display:inline-block;text-decoration:none">Começar a estudar agora →</a>
+</section>
+
+    <div class="alert red" style="margin-top:16px">
+      <span class="tag">Onde estão os pontos</span> — são <b>50 questões</b> distribuídas entre <b>Português, Matemática, Noções de Informática, Conhecimentos Gerais e Código de Ética dos Correios</b>. Domine Português, Matemática e Informática (a base) e garanta a Ética (é decoreba de um documento curto). <b>Não deixe nada em branco.</b>
+    </div>
+    <div class="alert amber">
+      <span class="tag">Datas</span> — O edital do próximo concurso dos Correios <b>ainda não saiu</b>. Este cursinho foi montado pelo <b>último edital (IBFC 2024)</b> e será ajustado quando o novo sair. A banca IBFC costuma cobrar de forma <b>literal e direta</b> — treine muitas questões.
+    </div>
+
+    <!-- ============ CENTRAL DE ESTUDOS (HUB) ============ -->
+    <section id="hub">
+      <div class="card">
+        <p class="eyebrow">Central de estudos</p>
+        <h2 class="sec">Por onde começar</h2>
+        <div id="proxima" class="proxima"></div>
+        <p>Siga a trilha na ordem — do aprender ao revisar. Está tudo aqui dentro: você não precisa pesquisar fora.</p>
+        <div class="hubgrid">
+          <a class="hubc" href="#dominio"><span class="hn">1</span><b>Aprender + treinar</b><span class="d">Domínio por prioridade (P1/P2/P3) e aulas por tema, cada uma ensinando do zero: Aprenda → Entenda → Na prova. Comece por Português e Matemática.</span></a>
+          <a class="hubc" href="#simulado"><span class="hn">2</span><b>Praticar</b><span class="d">Quatro simulados que corrigem sozinho (com cronômetro) e o painel “Revise seus erros”, no formato da prova.</span></a>
+          <a class="hubc" href="#flashcards"><span class="hn">3</span><b>Revisar</b><span class="d">Flashcards + plano de estudos com horas por dia (progresso salvo na sua conta) até a prova.</span></a>
+          <a class="hubc" href="#ficha"><span class="hn">4</span><b>Consultar</b><span class="d">Ficha do edital, o que estudar (verticalizado), fontes oficiais e o tutor infinito no Claude Code.</span></a>
+        </div>
+        <div class="alert blue"><span class="tag">Prioridade</span> — <b>Português, Matemática e Noções de Informática</b> são a base e concentram a maior parte da prova. <b>Conhecimentos Gerais</b> (atualidades) e o <b>Código de Ética dos Correios</b> completam — a Ética é a mais "decorável" e rende pontos garantidos. Ataque primeiro os temas <b>P1</b>.</div>
+        <h3 style="margin:18px 0 8px">Meu desempenho</h3>
+        <div id="desempenho" class="desempenho"></div>
+      </div>
+    </section>
+
+    <!-- ============ 1. FICHA ============ -->
+    <section id="ficha">
+      <div class="card">
+        <p class="eyebrow">Seção 1</p>
+        <h2 class="sec">Ficha técnica do concurso</h2>
+        <div class="tw"><table><tbody>
+          <tr><td class="k">Órgão</td><td>Correios (ECT — Empresa Brasileira de Correios e Telégrafos), empresa pública federal vinculada ao Ministério das Comunicações.</td></tr>
+          <tr><td class="k">Banca</td><td><strong>IBFC</strong> (Instituto Brasileiro de Formação e Capacitação) — banca do último concurso (2024).</td></tr>
+          <tr><td class="k">Cargo</td><td><strong>Agente de Correios — Carteiro</strong> — Nível Médio (Ensino Médio completo). Pode exigir CNH conforme o edital.</td></tr>
+          <tr><td class="k">Remuneração</td><td>~ R$ 2.600 inicial + benefícios (vale-alimentação/refeição, entre outros) — referência 2024.</td></tr>
+          <tr><td class="k">Prova objetiva</td><td><strong>50 questões</strong> de múltipla escolha (A–D, uma correta), eliminatória e classificatória.</td></tr>
+          <tr><td class="k">Disciplinas</td><td>Língua Portuguesa · Matemática · Noções de Informática · Conhecimentos Gerais · <strong>Código de Conduta Ética e Integridade dos Correios</strong>.</td></tr>
+          <tr><td class="k">Aprovação</td><td>Atingir o mínimo exigido no edital (em geral, aproveitamento mínimo por prova/no total). Meta segura: acertar o máximo, sem deixar questões em branco.</td></tr>
+          <tr><td class="k">Fases</td><td>Prova objetiva (e, conforme o edital, comprovação de requisitos/exames). Para Carteiro pode haver checagem de aptidão para a atividade.</td></tr>
+        </tbody></table></div>
+
+        <h3 id="dist">1.1 As 50 questões e o foco</h3>
+        <div class="weights">
+          <div class="wrow"><span>Língua Portuguesa</span><span class="bar"><i style="width:100%"></i></span><span>base</span></div>
+          <div class="wrow"><span>Matemática</span><span class="bar"><i style="width:90%"></i></span><span>base</span></div>
+          <div class="wrow"><span>Noções de Informática</span><span class="bar"><i style="width:85%"></i></span><span>cai bastante</span></div>
+          <div class="wrow"><span>Conhecimentos Gerais</span><span class="bar"><i style="width:70%"></i></span><span>atualidades</span></div>
+          <div class="wrow"><span>Código de Ética dos Correios</span><span class="bar"><i style="width:60%"></i></span><span>decoreba curta</span></div>
+        </div>
+        <p class="peg"><strong>Estratégia:</strong> como todas as questões valem igual, invista onde há mais questões (Português, Matemática, Informática). O <strong>Código de Ética dos Correios</strong> é um documento curto — leia-o e garanta esses pontos.</p>
+      </div>
+</section>
+
+    <!-- ============ 2. MUDOU ============ -->
+    <section id="mudou">
+      <div class="card">
+        <p class="eyebrow">Seção 2</p>
+        <h2 class="sec">O que você precisa saber sobre o próximo edital</h2>
+        <p>O próximo edital ainda não saiu. O que dá para prever pelo histórico (IBFC 2024):</p>
+        <ul>
+          <li>Prova de <strong>múltipla escolha</strong> (A–D), cobrança <strong>literal e direta</strong> — treinar muitas questões é o caminho.</li>
+          <li>As disciplinas tendem a se manter: Português, Matemática, Noções de Informática, Conhecimentos Gerais e o <strong>Código de Ética dos Correios</strong>.</li>
+          <li>Podem mudar: banca, número de vagas e detalhes do conteúdo. Confirme tudo quando o edital sair.</li>
+        </ul>
+        <p class="peg">Estude pelo <strong>edital de 2024</strong> agora; resolver provas anteriores da IBFC é um ótimo treino.</p>
+      </div>
+</section>
+
+    <!-- ============ 3. CORREÇÕES ============ -->
+    <section id="correcoes">
+      <div class="card">
+        <p class="eyebrow">Seção 3</p>
+        <h2 class="sec">Erros comuns de quem estuda por material genérico</h2>
+        <div class="tw"><table>
+          <thead><tr><th>Material genérico diz</th><th>O certo para os Correios (IBFC)</th></tr></thead>
+          <tbody>
+          <tr><td>Cai “Ética” genérica</td><td>É o <strong>Código de Conduta Ética e Integridade dos Correios</strong> (documento próprio da empresa)</td></tr>
+          <tr><td>Matemática só básica</td><td>Inclui <strong>porcentagem, regra de três, juros, razão/proporção, e raciocínio lógico</strong></td></tr>
+          <tr><td>Informática só teoria</td><td>Cobra <strong>Windows, Word/Excel, internet/e-mail e segurança</strong> de forma prática</td></tr>
+          <tr><td>Chutar não ajuda</td><td>Não há desconto por erro: <strong>marque todas</strong> — eliminando 2, o chute vira 50%</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+</section>
+
+    <!-- ============ 4. PERFIL ============ -->
+    <section id="perfil">
+      <div class="card">
+        <p class="eyebrow">Seção 4</p>
+        <h2 class="sec">Como a IBFC cobra (perfil da banca)</h2>
+        <ul>
+          <li><strong>Múltipla escolha (A–D)</strong>, uma correta. Comandos: “assinale a correta/incorreta”, “EXCETO”.</li>
+          <li><strong>Cobrança direta e literal</strong> — questões objetivas, sem muita “pegadinha filosófica”; quem treinou questões vai bem.</li>
+          <li><strong>Português:</strong> interpretação de texto + gramática (ortografia, pontuação, concordância, crase, classes de palavras).</li>
+          <li><strong>Matemática:</strong> porcentagem, regra de três, juros, razão/proporção, operações e raciocínio lógico, muitas vezes contextualizados.</li>
+          <li><strong>Informática:</strong> Windows, Word, Excel, navegadores, e-mail e segurança da informação.</li>
+          <li><strong>Conhecimentos Gerais:</strong> atualidades (Brasil e mundo), e temas ligados aos Correios/serviços postais.</li>
+          <li><strong>Código de Ética dos Correios:</strong> princípios, condutas, deveres e vedações previstos no documento oficial.</li>
+        </ul>
+      </div>
+</section>
+
+    <!-- ============ 5. VERTICALIZADO ============ -->
+    <section>
+      <p class="eyebrow" style="margin-left:2px">Seção 5 · Edital verticalizado (por disciplina)</p>
+      <h2 class="sec" style="margin-left:2px">O que estudar em cada item — com a pegadinha</h2>
+      <p style="margin-left:2px">Prioridade: <span class="pri p1">P1</span> cai com certeza e pesa · <span class="pri p2">P2</span> cai com frequência · <span class="pri p3">P3</span> cai pouco. <em style="color:var(--muted)">(projetado pelo último edital — Correios/IBFC 2024)</em></p>
+      <div class="alert blue" style="margin-left:2px">
+        <span class="tag">Como definimos as prioridades — pelo último edital, não achismo</span>
+        <p style="margin:6px 0 4px">O edital do próximo concurso ainda não saiu. As marcações P1/P2/P3 seguem o <b>último edital (Correios/IBFC 2024)</b>:</p>
+        <ul style="margin:0">
+          <li><b>Estrutura:</b> <b>50 questões</b> de múltipla escolha (A–D) em 5 disciplinas: Língua Portuguesa, Matemática, Noções de Informática, Conhecimentos Gerais e Código de Conduta Ética e Integridade dos Correios.</li>
+          <li><b>O que mais pesa:</b> <b>Português, Matemática e Informática</b> são a base e concentram a maior parte da prova — prioridade nº 1.</li>
+          <li><b>Pontos garantidos:</b> o <b>Código de Ética dos Correios</b> é um documento curto (decoreba) e as <b>atualidades</b> rendem com leitura diária.</li>
+        </ul>
+        <p class="peg" style="margin:8px 0 0;font-size:13px">Fontes: edital e provas do concurso Correios 2024 (IBFC). Quando o novo edital sair, tudo será reajustado.</p>
+      </div>
+    </section>
+
+    <section id="portugues">
+      <div class="card">
+        <p class="eyebrow">Seção 5 · Edital verticalizado</p>
+        <h2 class="sec">Língua Portuguesa</h2>
+        <p style="margin-left:2px">Prioridade: <span class="pri p1">P1</span> cai com certeza e pesa · <span class="pri p2">P2</span> cai com frequência · <span class="pri p3">P3</span> cai pouco.</p>
+        <div class="tw"><table>
+          <thead><tr><th>Item</th><th>Pri.</th><th>O que dominar</th><th>Pegadinha</th></tr></thead>
+          <tbody>
+          <tr><td class="k">Interpretação de texto</td><td><span class="pri p1">P1</span></td><td>Compreensão × inferência; ideia central; sentido no contexto.</td><td class="peg">Alternativa verdadeira “no mundo real” mas ausente do texto.</td></tr>
+          <tr><td class="k">Ortografia e acentuação</td><td><span class="pri p2">P2</span></td><td>Novo Acordo; uso de porquê/mal-mau/há-a; acentuação.</td><td class="peg">Grafias antigas (idéia, vôo) postas como certas.</td></tr>
+          <tr><td class="k">Pontuação</td><td><span class="pri p1">P1</span></td><td>Vírgula não separa sujeito do verbo; aposto, vocativo, adverbial.</td><td class="peg">Explicativa (com vírgula) × restritiva (sem vírgula).</td></tr>
+          <tr><td class="k">Classes de palavras e sintaxe</td><td><span class="pri p2">P2</span></td><td>Substantivo, verbo, pronome; sujeito, objeto; “que” relativo × conjunção.</td><td class="peg">Confundir adjunto com complemento.</td></tr>
+          <tr><td class="k">Concordância e regência</td><td><span class="pri p1">P1</span></td><td>Haver/fazer impessoais (singular); regência (assistir a, obedecer a).</td><td class="peg">“Houveram”; “preferir do que”.</td></tr>
+          <tr><td class="k">Crase</td><td><span class="pri p1">P1</span></td><td>a+artigo; teste do “ao”; locuções (às vezes, à noite).</td><td class="peg">Antes de verbo/masculino/pronome não há crase.</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+</section>
+
+    <section id="matematica">
+      <div class="card">
+        <h2 class="sec">Matemática e Raciocínio</h2>
+        <div class="tw"><table>
+          <thead><tr><th>Tema</th><th>Pri.</th><th>Fórmula / ponto-chave</th><th>Pegadinha</th></tr></thead>
+          <tbody>
+          <tr><td class="k">Porcentagem</td><td><span class="pri p1">P1</span></td><td>20% = 0,20; aumentar = ×1,20; tirar = ×0,80; sucessivos multiplicam.</td><td class="peg">+10% e +20% = +32% (não 30%).</td></tr>
+          <tr><td class="k">Regra de três</td><td><span class="pri p1">P1</span></td><td>Direta (mesmo sentido) × inversa (sentidos opostos).</td><td class="peg">Tratar inversa como direta.</td></tr>
+          <tr><td class="k">Juros</td><td><span class="pri p2">P2</span></td><td>Simples J=C·i·t; composto M=C·(1+i)ᵗ.</td><td class="peg">Juro × montante; simples no lugar de composto.</td></tr>
+          <tr><td class="k">Razão, proporção e média</td><td><span class="pri p2">P2</span></td><td>Proporção; média = soma÷quantidade.</td><td class="peg">Média ponderada × simples.</td></tr>
+          <tr><td class="k">Raciocínio lógico</td><td><span class="pri p1">P1</span></td><td>Sequências; proposições; negações; ~(p→q)=p∧~q.</td><td class="peg">Negar “se p então q” com “se não p...”.</td></tr>
+          <tr><td class="k">Operações e problemas</td><td><span class="pri p2">P2</span></td><td>Quatro operações, frações, unidades; problemas do dia a dia.</td><td class="peg">Erro de unidade (kg, R$, %).</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+</section>
+
+    <section id="gerais">
+      <div class="card">
+        <h2 class="sec">Noções de Informática</h2>
+        <div class="tw"><table>
+          <thead><tr><th>Tema</th><th>Pri.</th><th>O que dominar</th><th>Pegadinha</th></tr></thead>
+          <tbody>
+          <tr><td class="k">Windows e arquivos</td><td><span class="pri p2">P2</span></td><td>Pastas, atalhos, extensões, área de trabalho, Explorer.</td><td class="peg">Atalhos (Ctrl+C/V/Z) e extensões de arquivo.</td></tr>
+          <tr><td class="k">Word</td><td><span class="pri p2">P2</span></td><td>Formatação, salvar, localizar/substituir, revisão.</td><td class="peg">Funções de formatação x ortografia.</td></tr>
+          <tr><td class="k">Excel</td><td><span class="pri p1">P1</span></td><td>=SOMA, =MÉDIA, =SE; referências; alças de preenchimento.</td><td class="peg">=SOMA soma, =MÉDIA calcula média (não confundir).</td></tr>
+          <tr><td class="k">Internet e e-mail</td><td><span class="pri p2">P2</span></td><td>Navegadores, links, downloads; Cc/Cco, anexos.</td><td class="peg">Cc (todos veem) × Cco (oculto).</td></tr>
+          <tr><td class="k">Segurança da informação</td><td><span class="pri p1">P1</span></td><td>Vírus, worm, trojan, ransomware, phishing; senha forte, backup, 2 fatores.</td><td class="peg">Vírus (hospedeiro) × worm (autopropaga).</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+</section>
+
+    <section id="legislacao">
+      <div class="card">
+        <h2 class="sec">Conhecimentos Gerais (Atualidades)</h2>
+        <p>Fatos recentes do Brasil e do mundo, e temas ligados aos <strong>Correios e serviços postais</strong> (logística, e-commerce, transformação digital).</p>
+        <div class="tw"><table>
+          <thead><tr><th>Tema</th><th>Pri.</th><th>O que acompanhar</th></tr></thead>
+          <tbody>
+          <tr><td class="k">Atualidades — Brasil</td><td><span class="pri p1">P1</span></td><td>Economia, política, sociedade, meio ambiente; principais fatos do ano.</td></tr>
+          <tr><td class="k">Atualidades — mundo</td><td><span class="pri p2">P2</span></td><td>Conflitos, organismos internacionais, tecnologia, clima.</td></tr>
+          <tr><td class="k">Correios e logística</td><td><span class="pri p2">P2</span></td><td>Papel dos Correios, e-commerce, entregas, digitalização de serviços.</td></tr>
+          </tbody>
+        </table></div>
+        <p class="peg"><strong>Método:</strong> 15 min/dia de manchetes, anotando 3 fatos (o quê, quem, quando). Atualidades mudam — reveja perto da prova.</p>
+      </div>
+</section>
+
+    <section id="especificos">
+      <div class="card">
+        <h2 class="sec">Código de Conduta Ética e Integridade dos Correios</h2>
+        <p>É um documento próprio da empresa (Código de Conduta Ética e Integridade dos CORREIOS). Cobrança <strong>literal</strong> — leia o documento e garanta esses pontos.</p>
+        <ul>
+          <li><strong>Valores e princípios:</strong> respeito, honestidade, integridade, transparência, impessoalidade, responsabilidade.</li>
+          <li><strong>Condutas esperadas:</strong> tratar todos com cortesia; zelar pelos bens e pela imagem da empresa; sigilo das informações; uso adequado de recursos.</li>
+          <li><strong>Vedações:</strong> receber vantagens indevidas; usar o cargo em proveito próprio; conflito de interesses; discriminação e assédio.</li>
+          <li><strong>Integridade:</strong> canais de denúncia (ouvidoria/canal de ética); prevenção à corrupção e à fraude.</li>
+          <li><strong>Gestão da ética:</strong> Comissão de Ética dos Correios (apoio à aplicação do Código).</li>
+        </ul>
+        <p class="peg">Pegadinha típica: trocar “é vedado” por “é permitido”. Leia com atenção o verbo de cada item.</p>
+      </div>
+</section>
+
+    <!-- ============ 6. PLANO ============ -->
+    <section id="plano">
+      <p class="eyebrow">Seção 6</p>
+      <h2 class="sec">Plano de estudos — 8 semanas + reta final (com horas por dia)</h2>
+      <div class="alert amber"><span class="tag">Sem data ainda</span> — o edital do próximo concurso dos Correios <b>ainda não saiu</b>. Este é um <b>ciclo de 8 semanas</b> para você começar HOJE por Português e Matemática (a base) e chegar pronto. Quando o edital sair, encaixe o ciclo na data.</div>
+      <p>Ritmo recomendado: <strong>~2 h nos dias úteis</strong> (19h–21h) e <strong>simulado no sábado</strong>. Pouco tempo? Priorize Português, Matemática e Informática; a Ética é rápida de garantir.</p>
+      <h3>Ciclo semanal (horas por matéria)</h3>
+      <div class="tw"><table>
+        <thead><tr><th>Matéria</th><th>Horas/sem.</th><th>Por quê</th></tr></thead>
+        <tbody>
+        <tr><td class="k">Língua Portuguesa</td><td>4 h30</td><td>Base e grande nº de questões.</td></tr>
+        <tr><td class="k">Matemática</td><td>4 h</td><td>Muitas questões; exige treino.</td></tr>
+        <tr><td class="k">Noções de Informática</td><td>3 h</td><td>Cai bastante; rende com prática.</td></tr>
+        <tr><td class="k">Conhecimentos Gerais</td><td>2 h</td><td>Atualidades — leitura diária.</td></tr>
+        <tr><td class="k">Código de Ética dos Correios</td><td>1 h30</td><td>Documento curto — pontos garantidos.</td></tr>
+        <tr><td class="k">Simulado + correção</td><td>3 h</td><td>Todo sábado, cronometrado.</td></tr>
+        </tbody>
+      </table></div>
+      <h3>Rotina diária (para quem trabalha)</h3>
+      <div class="tw"><table>
+        <thead><tr><th>Quando</th><th>O quê</th><th>Tempo</th></tr></thead>
+        <tbody>
+        <tr><td class="k">Ao acordar</td><td>Flashcards do dia anterior</td><td>20 min</td></tr>
+        <tr><td class="k">Almoço</td><td>Manchetes (Conhecimentos Gerais)</td><td>15 min</td></tr>
+        <tr><td class="k">19h00 · bloco 1</td><td>Matéria mais difícil (teoria + resumo)</td><td>50 min</td></tr>
+        <tr><td class="k">20h00 · bloco 2</td><td>Questões da mesma matéria (mín. 15) + caderno de erros</td><td>50 min</td></tr>
+        <tr><td class="k">21h00 · bloco 3</td><td>Informática ou Ética (leitura + questões)</td><td>40 min</td></tr>
+        </tbody>
+      </table></div>
+      <p class="peg">A matéria difícil vai no <strong>1º bloco após um descanso</strong>. <strong>Dormir 7–8 h vale mais que 1 h extra à meia-noite.</strong></p>
+      <h3>Cronograma por fases (marque conforme avança — fica salvo na sua conta)</h3>
+      <div id="plano-list">
+        <div class="chk"><input type="checkbox" id="f0"><label for="f0"><b>Fase 0 — Preparação:</b> organize o material e faça o <a href="#simulado">simulado diagnóstico</a> para achar suas matérias mais fracas.</label></div>
+        <div class="chk"><input type="checkbox" id="f1"><label for="f1"><b>Fase 1 — Português (base):</b> interpretação, ortografia, pontuação, classes de palavras.</label></div>
+        <div class="chk"><input type="checkbox" id="f2"><label for="f2"><b>Fase 2 — Português (avançado):</b> concordância, regência, crase, colocação; reescrita.</label></div>
+        <div class="chk"><input type="checkbox" id="f3"><label for="f3"><b>Fase 3 — Matemática:</b> porcentagem, regra de três, juros, razão/proporção, média e raciocínio lógico.</label></div>
+        <div class="chk"><input type="checkbox" id="f4"><label for="f4"><b>Fase 4 — Noções de Informática:</b> Windows, Word, Excel, internet/e-mail e segurança da informação.</label></div>
+        <div class="chk"><input type="checkbox" id="f5"><label for="f5"><b>Fase 5 — Conhecimentos Gerais:</b> atualidades (Brasil e mundo) e temas dos Correios/logística.</label></div>
+        <div class="chk"><input type="checkbox" id="f6"><label for="f6"><b>Fase 6 — Código de Ética dos Correios:</b> ler o documento oficial; valores, condutas e vedações.</label></div>
+        <div class="chk"><input type="checkbox" id="f7"><label for="f7"><b>Fase 7 — Revisão + simulados:</b> refaça o caderno de erros; simulados completos cronometrados.</label></div>
+      </div>
+      <h3 style="margin-top:34px">Plano dia a dia com horários (ciclo de 8 semanas)</h3>
+      <p>Cada dia já tem o que estudar. Marque conforme faz; o progresso fica salvo. <strong>Nunca pule o simulado de sábado.</strong></p>
+      <div id="crono-prog" class="cprog"></div>
+      <div id="diario-list">
+        <h4 class="wk">Semana 1 — Português base</h4>
+        <div class="chk"><input type="checkbox" id="pd1"><label for="pd1"><b>Seg · 19h–21h:</b> Interpretação de texto (aula+treino).</label></div>
+        <div class="chk"><input type="checkbox" id="pd2"><label for="pd2"><b>Ter · 19h–21h:</b> Ortografia e acentuação.</label></div>
+        <div class="chk"><input type="checkbox" id="pd3"><label for="pd3"><b>Qua · 19h–21h:</b> Pontuação.</label></div>
+        <div class="chk"><input type="checkbox" id="pd4"><label for="pd4"><b>Qui · 19h–21h:</b> Matemática — porcentagem (aula+treino).</label></div>
+        <div class="chk"><input type="checkbox" id="pd5"><label for="pd5"><b>Sex · 19h–21h:</b> Informática — Windows e Word.</label></div>
+        <div class="chk"><input type="checkbox" id="pd6"><label for="pd6"><b>Sáb · 08h30 (2–3 h):</b> Simulado 1 + caderno de erros.</label></div>
+        <div class="chk"><input type="checkbox" id="pd7"><label for="pd7"><b>Dom · 09h revisão leve:</b> Revisão dos erros + flashcards. Descanso.</label></div>
+        <h4 class="wk">Semana 2 — Português avançado</h4>
+        <div class="chk"><input type="checkbox" id="pd8"><label for="pd8"><b>Seg · 19h–21h:</b> Concordância e regência (aula+treino).</label></div>
+        <div class="chk"><input type="checkbox" id="pd9"><label for="pd9"><b>Ter · 19h–21h:</b> Crase (aula+treino).</label></div>
+        <div class="chk"><input type="checkbox" id="pd10"><label for="pd10"><b>Qua · 19h–21h:</b> Classes de palavras e sintaxe.</label></div>
+        <div class="chk"><input type="checkbox" id="pd11"><label for="pd11"><b>Qui · 19h–21h:</b> Matemática — regra de três.</label></div>
+        <div class="chk"><input type="checkbox" id="pd12"><label for="pd12"><b>Sex · 19h–21h:</b> Informática — Excel.</label></div>
+        <div class="chk"><input type="checkbox" id="pd13"><label for="pd13"><b>Sáb · 08h30 (2–3 h):</b> Simulado 2 + correção.</label></div>
+        <div class="chk"><input type="checkbox" id="pd14"><label for="pd14"><b>Dom · 09h revisão leve:</b> Revisão + flashcards. Descanso.</label></div>
+        <h4 class="wk">Semana 3 — Matemática</h4>
+        <div class="chk"><input type="checkbox" id="pd15"><label for="pd15"><b>Seg · 19h–21h:</b> Juros (aula+treino).</label></div>
+        <div class="chk"><input type="checkbox" id="pd16"><label for="pd16"><b>Ter · 19h–21h:</b> Razão, proporção e média.</label></div>
+        <div class="chk"><input type="checkbox" id="pd17"><label for="pd17"><b>Qua · 19h–21h:</b> Raciocínio lógico.</label></div>
+        <div class="chk"><input type="checkbox" id="pd18"><label for="pd18"><b>Qui · 19h–21h:</b> Português — revisão dos campeões.</label></div>
+        <div class="chk"><input type="checkbox" id="pd19"><label for="pd19"><b>Sex · 19h–21h:</b> Informática — internet e e-mail.</label></div>
+        <div class="chk"><input type="checkbox" id="pd20"><label for="pd20"><b>Sáb · 08h30 (2–3 h):</b> Simulado 3 + correção.</label></div>
+        <div class="chk"><input type="checkbox" id="pd21"><label for="pd21"><b>Dom · 09h revisão leve:</b> Revisão + flashcards. Descanso.</label></div>
+        <h4 class="wk">Semana 4 — Informática + Gerais</h4>
+        <div class="chk"><input type="checkbox" id="pd22"><label for="pd22"><b>Seg · 19h–21h:</b> Segurança da informação (aula+treino).</label></div>
+        <div class="chk"><input type="checkbox" id="pd23"><label for="pd23"><b>Ter · 19h–21h:</b> Revisão de Windows/Word/Excel.</label></div>
+        <div class="chk"><input type="checkbox" id="pd24"><label for="pd24"><b>Qua · 19h–21h:</b> Conhecimentos Gerais — atualidades Brasil.</label></div>
+        <div class="chk"><input type="checkbox" id="pd25"><label for="pd25"><b>Qui · 19h–21h:</b> Conhecimentos Gerais — mundo e Correios.</label></div>
+        <div class="chk"><input type="checkbox" id="pd26"><label for="pd26"><b>Sex · 19h–21h:</b> Matemática — refazer treinos.</label></div>
+        <div class="chk"><input type="checkbox" id="pd27"><label for="pd27"><b>Sáb · 08h30 (2–3 h):</b> Simulado 4 + correção.</label></div>
+        <div class="chk"><input type="checkbox" id="pd28"><label for="pd28"><b>Dom · 09h revisão leve:</b> Revisão + flashcards. Descanso.</label></div>
+        <h4 class="wk">Semana 5 — Ética + revisão 1</h4>
+        <div class="chk"><input type="checkbox" id="pd29"><label for="pd29"><b>Seg · 19h–21h:</b> Código de Ética dos Correios (ler o documento).</label></div>
+        <div class="chk"><input type="checkbox" id="pd30"><label for="pd30"><b>Ter · 19h–21h:</b> Ética — treino de questões.</label></div>
+        <div class="chk"><input type="checkbox" id="pd31"><label for="pd31"><b>Qua · 19h–21h:</b> Refazer erros de Português.</label></div>
+        <div class="chk"><input type="checkbox" id="pd32"><label for="pd32"><b>Qui · 19h–21h:</b> Refazer erros de Matemática.</label></div>
+        <div class="chk"><input type="checkbox" id="pd33"><label for="pd33"><b>Sex · 19h–21h:</b> Atualidades da semana.</label></div>
+        <div class="chk"><input type="checkbox" id="pd34"><label for="pd34"><b>Sáb · 08h30 (2–3 h):</b> Refazer o Simulado 1 (comparar nota).</label></div>
+        <div class="chk"><input type="checkbox" id="pd35"><label for="pd35"><b>Dom · 09h revisão leve:</b> Revisão. Descanso.</label></div>
+        <h4 class="wk">Semana 6 — Reforço</h4>
+        <div class="chk"><input type="checkbox" id="pd36"><label for="pd36"><b>Seg · 19h–21h:</b> Português — pontos que mais erra.</label></div>
+        <div class="chk"><input type="checkbox" id="pd37"><label for="pd37"><b>Ter · 19h–21h:</b> Matemática — pontos que mais erra.</label></div>
+        <div class="chk"><input type="checkbox" id="pd38"><label for="pd38"><b>Qua · 19h–21h:</b> Informática — pontos que mais erra.</label></div>
+        <div class="chk"><input type="checkbox" id="pd39"><label for="pd39"><b>Qui · 19h–21h:</b> Ética — revisão.</label></div>
+        <div class="chk"><input type="checkbox" id="pd40"><label for="pd40"><b>Sex · 19h–21h:</b> Simulado aleatório (misto).</label></div>
+        <div class="chk"><input type="checkbox" id="pd41"><label for="pd41"><b>Sáb · 08h30 (2–3 h):</b> Refazer o simulado da pior nota.</label></div>
+        <div class="chk"><input type="checkbox" id="pd42"><label for="pd42"><b>Dom · 09h revisão leve:</b> Revisão. Descanso.</label></div>
+        <h4 class="wk">Semana 7 — Revisão geral</h4>
+        <div class="chk"><input type="checkbox" id="pd43"><label for="pd43"><b>Seg · 19h–21h:</b> Caderno de erros — Português.</label></div>
+        <div class="chk"><input type="checkbox" id="pd44"><label for="pd44"><b>Ter · 19h–21h:</b> Caderno de erros — Matemática.</label></div>
+        <div class="chk"><input type="checkbox" id="pd45"><label for="pd45"><b>Qua · 19h–21h:</b> Caderno de erros — Informática/Gerais/Ética.</label></div>
+        <div class="chk"><input type="checkbox" id="pd46"><label for="pd46"><b>Qui · 19h–21h:</b> Reler resumos + flashcards embaralhados.</label></div>
+        <div class="chk"><input type="checkbox" id="pd47"><label for="pd47"><b>Sex · 19h–21h:</b> Simulado leve + revisão.</label></div>
+        <div class="chk"><input type="checkbox" id="pd48"><label for="pd48"><b>Sáb · 08h30 (2–3 h):</b> Descanso ativo (flashcards).</label></div>
+        <div class="chk"><input type="checkbox" id="pd49"><label for="pd49"><b>Dom · 09h revisão leve:</b> Descanso.</label></div>
+        <h4 class="wk">Semana 8 — Reta final</h4>
+        <div class="chk"><input type="checkbox" id="pd50"><label for="pd50"><b>Seg · 19h–21h:</b> Só flashcards e tabelas (Português/Matemática).</label></div>
+        <div class="chk"><input type="checkbox" id="pd51"><label for="pd51"><b>Ter · 19h–21h:</b> Só flashcards (Informática/Gerais).</label></div>
+        <div class="chk"><input type="checkbox" id="pd52"><label for="pd52"><b>Qua · 19h–21h:</b> Reler o Código de Ética.</label></div>
+        <div class="chk"><input type="checkbox" id="pd53"><label for="pd53"><b>Qui · 19h–21h:</b> Revisão relâmpago geral.</label></div>
+        <div class="chk"><input type="checkbox" id="pd54"><label for="pd54"><b>Sex · 19h–21h:</b> Simulado leve final.</label></div>
+        <div class="chk"><input type="checkbox" id="pd55"><label for="pd55"><b>Sáb · 08h30 (2–3 h):</b> Conferir documentos e local.</label></div>
+        <div class="chk"><input type="checkbox" id="pd56"><label for="pd56"><b>Dom · 09h revisão leve:</b> DESCANSO. Confie no que estudou.</label></div>
+      </div>
+      <div style="margin-top:14px"><button class="btn ghost" id="plano-reset" type="button">Zerar meu progresso do cronograma</button></div>
+      <div class="callout" style="margin-top:22px">
+        <h3 style="margin-top:0">🗓️ Semana da prova — só revisão</h3>
+        <p><b>Nada de matéria nova.</b> Reveja caderno de erros, o Código de Ética e flashcards.</p>
+        <div class="tw"><table>
+          <thead><tr><th>Momento</th><th>O quê</th></tr></thead>
+          <tbody>
+          <tr><td class="k">Últimos 3 dias</td><td>Caderno de erros, Código de Ética e flashcards campeões.</td></tr>
+          <tr><td class="k">Véspera</td><td>Descanso. Checklist de documentos. Dormir cedo.</td></tr>
+          <tr><td class="k">Na prova</td><td>Todas as questões valem igual — <b>não deixe nada em branco</b>. Comece pelo que domina; eliminando 2 alternativas, chute.</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+</section>
+
+    <section id="memoria"><div class="card">
+      <p class="eyebrow">O método que fixa</p>
+      <h2 class="sec">Como fixar na memória (com base em evidências)</h2>
+      <div class="grid2">
+        <div class="mini"><h4>1. Recuperação ativa</h4><p style="margin:0">Feche o material e responda de memória; só depois confira.</p></div>
+        <div class="mini"><h4>2. Revisão espaçada</h4><p style="margin:0">Reveja em <strong>24 h, 7 dias e 21 dias</strong>. Os flashcards com “Sei/Não sei” fazem isso sozinhos.</p></div>
+        <div class="mini"><h4>3. Questões como método</h4><p style="margin:0">Metade do tempo resolvendo questões. Cada erro vira uma linha no caderno.</p></div>
+        <div class="mini"><h4>4. Intercalação</h4><p style="margin:0">Alterne matérias no dia (Português + Matemática + Informática).</p></div>
+        <div class="mini"><h4>5. Técnica Feynman</h4><p style="margin:0">Explique como para uma criança de 12 anos.</p></div>
+        <div class="mini"><h4>6. Tabelas próprias</h4><p style="margin:0">Resuma fórmulas e regras em tabelas — escrever à mão fixa mais.</p></div>
+      </div>
+      <h4>Mnemônicos que salvam (Correios)</h4>
+      <ul>
+        <li><strong>Crase:</strong> troque por masculino — deu “ao” = tem crase.</li>
+        <li><strong>“Houveram” não existe</strong> nesse sentido → “Houve”.</li>
+        <li><strong>Aumentos sucessivos multiplicam:</strong> +10% e +20% = +32%.</li>
+        <li><strong>=SOMA soma · =MÉDIA calcula média.</strong></li>
+        <li><strong>Cc todos veem · Cco oculto.</strong></li>
+        <li><strong>Vírus precisa de hospedeiro · worm se autopropaga.</strong></li>
+        <li><strong>Ética:</strong> vantagem indevida = vedado; leia o verbo (“é vedado” × “é permitido”).</li>
+      </ul>
+    </div></section>
+
+    <!-- ============ DOMÍNIO POR PRIORIDADE ============ -->
+    <section id="dominio">
+      <p class="eyebrow">Domínio por prioridade</p>
+      <h2 class="sec">Dominar cada P1, P2 e P3 — do jeito certo</h2>
+      <p>A prova tem 50 questões de igual valor. <strong>Português, Matemática e Informática</strong> são a base (maioria das questões) — por isso concentram os P1. Estude nesta ordem: <strong>primeiro os P1</strong>, depois P2. Em cada tema: <b>Aprenda</b> → <b>Entenda</b> → <b class="okc">🎯 Na prova</b>. Pratique nas <a href="#treinos-sec">aulas + treinos</a>.</p>
+      <div class="prband p1"><span class="tag">P1</span><h3>Cai com certeza e pesa — domine 100%</h3><span class="cnt">comece por aqui</span></div>
+      <div class="domgrid">
+<div class="domc"><h4>Interpretação de texto <span class="mt">Língua Portuguesa</span></h4>
+  <p class="ap"><b>Aprenda:</b> interpretar é responder pelo que o texto diz, usando só o que está escrito.</p>
+  <p><b>Entenda:</b> compreensão × inferência × extrapolação; ache a ideia central.</p>
+  <p class="na"><b>🎯 Na prova:</b> desconfie de 'sempre/todos' e de info verdadeira mas ausente.</p></div>
+<div class="domc"><h4>Concordância e crase <span class="mt">Língua Portuguesa</span></h4>
+  <p class="ap"><b>Aprenda:</b> haver/fazer impessoais → singular; crase = teste do 'ao'.</p>
+  <p><b>Entenda:</b> 'existir' concorda; nunca há crase antes de verbo/masculino/pronome.</p>
+  <p class="na"><b>🎯 Na prova:</b> 'Houveram' é sempre erro.</p></div>
+<div class="domc"><h4>Pontuação <span class="mt">Língua Portuguesa</span></h4>
+  <p class="ap"><b>Aprenda:</b> a vírgula nunca separa o sujeito do verbo; isola vocativo, aposto e adverbial deslocada.</p>
+  <p><b>Entenda:</b> adjetiva explicativa (com vírgula) = todos; restritiva (sem) = alguns.</p>
+  <p class="na"><b>🎯 Na prova:</b> a vírgula muda o sentido da adjetiva.</p></div>
+<div class="domc"><h4>Porcentagem e regra de três <span class="mt">Matemática</span></h4>
+  <p class="ap"><b>Aprenda:</b> aumentar 20% = ×1,20; tirar = ×0,80. Regra de três: direta ou inversa.</p>
+  <p><b>Entenda:</b> aumentos sucessivos multiplicam (+32%, não +30%).</p>
+  <p class="na"><b>🎯 Na prova:</b> veja se é direta (mesmo sentido) ou inversa (oposto).</p></div>
+<div class="domc"><h4>Juros e problemas <span class="mt">Matemática</span></h4>
+  <p class="ap"><b>Aprenda:</b> juros simples crescem igual; composto rende juro sobre juro.</p>
+  <p><b>Entenda:</b> J=C·i·t; M=C·(1+i)ᵗ; leia se pedem juro ou montante.</p>
+  <p class="na"><b>🎯 Na prova:</b> cuidado com a unidade e com simples × composto.</p></div>
+<div class="domc"><h4>Raciocínio lógico <span class="mt">Matemática</span></h4>
+  <p class="ap"><b>Aprenda:</b> frases V/F e 'se...então'. Negar 'se p então q' = 'p e não q'.</p>
+  <p><b>Entenda:</b> conectivos; sequências (padrão de soma ou multiplicação).</p>
+  <p class="na"><b>🎯 Na prova:</b> a equivalente é a contrapositiva, não a recíproca.</p></div>
+<div class="domc"><h4>Excel e segurança <span class="mt">Noções de Informática</span></h4>
+  <p class="ap"><b>Aprenda:</b> =SOMA soma, =MÉDIA calcula média, =SE testa condição. Segurança: ransomware sequestra dados.</p>
+  <p><b>Entenda:</b> atalhos (Ctrl+C/V/Z); vírus × worm; phishing.</p>
+  <p class="na"><b>🎯 Na prova:</b> =SOMA ≠ =MÉDIA; vírus precisa de hospedeiro, worm não.</p></div>
+<div class="domc"><h4>Código de Ética dos Correios <span class="mt">Ética Correios</span></h4>
+  <p class="ap"><b>Aprenda:</b> documento próprio: valores (respeito, honestidade, integridade) e vedações (vantagem indevida, uso do cargo em proveito próprio).</p>
+  <p><b>Entenda:</b> condutas esperadas × vedações; canal de ética/ouvidoria.</p>
+  <p class="na"><b>🎯 Na prova:</b> trocar 'é vedado' por 'é permitido' — leia o verbo.</p></div>
+      </div>
+      <div class="prband p2"><span class="tag">P2</span><h3>Cai bastante — garanta depois dos P1</h3><span class="cnt">segundo bloco</span></div>
+      <div class="domgrid">
+<div class="domc"><h4>Ortografia e classes <span class="mt">Língua Portuguesa</span></h4>
+  <p class="ap"><b>Aprenda:</b> Novo Acordo (sem trema; ideia, heroico); classes e funções das palavras.</p>
+  <p><b>Entenda:</b> 'que' relativo × conjunção; mau (adj.) × mal (adv.).</p>
+  <p class="na"><b>🎯 Na prova:</b> grafias antigas postas como certas.</p></div>
+<div class="domc"><h4>Windows, Word e e-mail <span class="mt">Noções de Informática</span></h4>
+  <p class="ap"><b>Aprenda:</b> pastas e extensões; formatação no Word; Cc/Cco no e-mail.</p>
+  <p><b>Entenda:</b> Cc todos veem, Cco oculto.</p>
+  <p class="na"><b>🎯 Na prova:</b> confundir Cc com Cco.</p></div>
+<div class="domc"><h4>Atualidades e os Correios <span class="mt">Conhecimentos Gerais</span></h4>
+  <p class="ap"><b>Aprenda:</b> noticiário recente + papel dos Correios (empresa pública federal, logística, e-commerce).</p>
+  <p><b>Entenda:</b> leitura diária; fatos com quem/quando.</p>
+  <p class="na"><b>🎯 Na prova:</b> dados desatualizados.</p></div>
+      </div>
+      <div class="alert blue"><span class="tag">Estratégia</span> — como todas as questões valem igual, responda TODAS (não deixe em branco). Garanta a <b>Ética dos Correios</b> (documento curto) e as atualidades, que são pontos “fáceis”.</div>
+</section>
+
+    <!-- ============ AULAS + TREINOS ============ -->
+    <section id="treinos-sec">
+      <div class="card">
+        <p class="eyebrow">Aula + prática</p>
+        <h2 class="sec">Aulas e treinos por tema</h2>
+        <p>Aqui você <strong>aprende primeiro</strong> (uma aula curta com exemplo) e <strong>treina em seguida</strong>. Em cada questão aparece o gabarito e a <strong>explicação do porquê</strong> — leia mesmo quando acertar: é o que fixa na memória. Tudo aqui dentro; você não precisa pesquisar fora.</p>
+        <div class="matfilter" id="matfilter"></div>
+      </div>
+      <div id="treinos"></div>
+    </section>
+
+    <!-- ============ ANTES DE CADA SIMULADO ============ -->
+    <section id="antes-sim"><div class="card">
+      <p class="eyebrow">Praticar · o que estudar antes</p>
+      <h2 class="sec">Antes de cada simulado — o que estudar</h2>
+      <p>Não faça no escuro: estude o tema (nas <strong>Aulas e treinos por tema</strong>, com filtro por matéria) e só depois faça o simulado. Ciclo: <strong>estudar → simular → o erro cai no caderno → estudar só o que errou.</strong></p>
+      <div class="grid2">
+        <div class="mini"><h4>Simulado 1 — faça agora, SEM estudar</h4><p style="margin:0">Diagnóstico: mostra onde você está mais fraco.</p></div>
+        <div class="mini"><h4>Antes do Simulado 2 — Português e Matemática</h4><p style="margin:0">Interpretação, crase, concordância; porcentagem e regra de três.</p></div>
+        <div class="mini"><h4>Antes do Simulado 3 — Informática</h4><p style="margin:0">Windows, Word, Excel, e-mail e segurança da informação.</p></div>
+        <div class="mini"><h4>Antes do Simulado 4 — Gerais e Ética</h4><p style="margin:0">Atualidades e o <strong>Código de Ética dos Correios</strong>. Refaça o Caderno de erros e rode <strong>Só Português</strong>.</p></div>
+      </div>
+      <div class="callout" style="margin-top:16px">
+        <h4 style="margin-top:0">A ordem de prioridade</h4>
+        <p style="margin:0">Sempre: <strong>1º Português, Matemática e Informática</strong> (a base) → <strong>2º Conhecimentos Gerais</strong> → <strong>3º Código de Ética</strong> (pontos garantidos). Como todas as questões valem igual, some o máximo de acertos e <strong>não deixe nada em branco</strong>.</p>
+      </div>
+    </div></section>
+
+    <!-- ============ 7. SIMULADO ============ -->
+    <section id="simulado"><div class="card">
+      <p class="eyebrow">Seção 7 · múltipla escolha (A–D) · formato da prova</p>
+      <h2 class="sec">Simulado no formato da prova</h2>
+      <p>Marque uma alternativa (A–D) em cada questão e clique em <strong>Corrigir prova</strong>. O site mostra sua nota e o comentário de cada questão. Use como diagnóstico (Semana 0) e refaça na Semana 6.</p>
+      <div id="sim"></div>
+      <div class="simbar">
+        <button class="btn" id="corrigir">Corrigir prova</button>
+        <button class="btn ghost" id="limpar">Limpar</button>
+        <span class="score" id="scorebox" aria-live="polite"></span>
+      </div>
+    </div></section>
+
+    <!-- ============ SIMULADO 2 ============ -->
+    <section id="simulado2"><div class="card">
+      <p class="eyebrow">Prova online 2 · múltipla escolha</p>
+      <h2 class="sec">Simulado 2 (inédito)</h2>
+      <p>Segunda prova no formato da IBFC (Português, Matemática, Informática, Conhecimentos Gerais e Ética dos Correios). Marque tudo e clique em <strong>Corrigir</strong> — a explicação de cada questão aparece embaixo dela.</p>
+      <div id="quiz-sim2"></div>
+    </div></section>
+
+    <!-- ============ SIMULADO 3 ============ -->
+    <section id="simulado3"><div class="card">
+      <p class="eyebrow">Prova online 3 · múltipla escolha</p>
+      <h2 class="sec">Simulado 3 (inédito)</h2>
+      <p>Terceira prova completa no formato da IBFC (Português, Matemática, Informática, Gerais e Ética). Cronometre, marque tudo e clique em <strong>Corrigir</strong>.</p>
+      <div id="quiz-sim3"></div>
+    </div></section>
+
+    <!-- ============ SIMULADO 4 ============ -->
+    <section id="simulado4"><div class="card">
+      <p class="eyebrow">Prova online 4 · múltipla escolha</p>
+      <h2 class="sec">Simulado 4 (inédito)</h2>
+      <p>Quarta prova completa no formato da IBFC. Use o <strong>cronômetro</strong> da barra de correção para treinar o ritmo. Marque tudo e clique em <strong>Corrigir</strong> — o painel <em>Revise seus erros</em> aparece no fim.</p>
+      <div id="quiz-sim4"></div>
+    </div></section>
+
+    <!-- ============ SIMULADO ALEATÓRIO ============ -->
+    <section id="aleatorio"><div class="card">
+      <p class="eyebrow">Prova sorteada do banco · 40 questões · 3 horas</p>
+      <h2 class="sec">Simulado aleatório</h2>
+      <p>Sorteia <strong>40 questões do banco inteiro</strong> (todos os simulados e treinos, ~300 questões), <strong>sempre diferentes</strong> — assim você treina o conteúdo, e não a ordem das respostas. Tem cronômetro de 3 h, e os erros vão para o seu <a href="#caderno">caderno</a>.</p>
+      <button class="btn" id="aleatorio-gerar" type="button">Gerar 40 questões</button>
+      <div id="quiz-aleatorio" style="margin-top:14px"></div>
+    </div></section>
+
+    <!-- ============ SÓ ESPECÍFICOS ============ -->
+    <section id="especifico"><div class="card">
+      <p class="eyebrow">Treino focado · a matéria que mais pesa</p>
+      <h2 class="sec">Só Língua Portuguesa</h2>
+      <p>A <strong>Língua Portuguesa</strong> é a disciplina com mais questões da prova. Aqui você treina <strong>só ela</strong>: questões sorteadas do banco de Português, sempre diferentes. Os erros vão para o seu <a href="#caderno">caderno</a>.</p>
+      <button class="btn" id="espec-gerar" type="button">Gerar 10 de Português</button>
+      <div id="espec-list" style="margin-top:14px"></div>
+    </div></section>
+
+    <!-- ============ CADERNO DE ERROS ============ -->
+    <section id="caderno"><div class="card">
+      <p class="eyebrow">Revisar</p>
+      <h2 class="sec">Meu caderno de erros <span id="cad-count" class="cadcount"></span></h2>
+      <p>Toda questão que você errar nos simulados e nos treinos entra aqui <strong>automaticamente</strong> e fica salva no seu navegador. Refaça-as quantas vezes precisar — <strong>rever o próprio erro é o que mais fixa</strong>. Quando acertar, clique em <em>Tirar do caderno as que acertei</em> para ele ir enxugando.</p>
+      <div class="cadtools">
+        <button class="btn ghost" id="cad-remove" type="button">Tirar do caderno as que acertei</button>
+        <button class="btn ghost" id="cad-download" type="button">Baixar para imprimir</button>
+        <button class="btn ghost" id="cad-clear" type="button">Limpar caderno</button>
+      </div>
+      <div id="caderno-list"></div>
+    </div></section>
+
+    <!-- ============ 9. FLASHCARDS ============ -->
+    <section id="flashcards"><div class="card">
+      <p class="eyebrow">Seção 9 · 80 cartões</p>
+      <h2 class="sec">Flashcards — revisão diária</h2>
+      <p>Toque no cartão para ver a resposta (responda em voz alta <em>antes</em> de virar). Depois marque <b>Sei ✓</b> ou <b>Não sei ↺</b>: o cartão sobe ou volta de <b>caixa</b> e reaparece no momento certo (revisão espaçada — 1, 3, 7 e 21 dias). Use <b>Revisar hoje</b> para ver só os que estão vencidos.</p>
+      <div class="fctools">
+        <button class="btn ghost" id="fc-shuffle">Embaralhar</button>
+        <button class="btn ghost" id="fc-all">Mostrar/ocultar todas</button>
+        <span class="score" id="fc-count"></span>
+      </div>
+      <div id="fcs" class="weights" style="gap:12px"></div>
+    </div></section>
+
+    <!-- ============ REVISÃO DE VÉSPERA ============ -->
+    <section id="vespera"><div class="card">
+      <p class="eyebrow">Reta final · leia na véspera e na manhã da prova</p>
+      <h2 class="sec">Revisão de véspera — tudo numa folha</h2>
+      <p>Na véspera e na manhã da prova, <strong>não estude matéria nova</strong>. Releia só isto e descanse.</p>
+      <div class="tw"><table>
+        <thead><tr><th>Tema</th><th>Guarde</th></tr></thead>
+        <tbody>
+        <tr><td class="k">Prova</td><td>50 questões, A–D; não deixar em branco</td></tr>
+        <tr><td class="k">Crase</td><td>teste do “ao”; nunca antes de verbo/masculino/pronome</td></tr>
+        <tr><td class="k">Concordância</td><td>“Houve” / “Faz X anos” (impessoais, singular)</td></tr>
+        <tr><td class="k">Porcentagem</td><td>aumentar = ×1,2; sucessivos multiplicam (+32%)</td></tr>
+        <tr><td class="k">Regra de três</td><td>direta (mesmo sentido) × inversa (oposto)</td></tr>
+        <tr><td class="k">Excel</td><td>=SOMA soma · =MÉDIA média</td></tr>
+        <tr><td class="k">E-mail</td><td>Cc (todos) × Cco (oculto)</td></tr>
+        <tr><td class="k">Segurança</td><td>vírus (hospedeiro) × worm (autopropaga); ransomware pede resgate</td></tr>
+        <tr><td class="k">Ética Correios</td><td>vantagem indevida = vedado; zelar por sigilo/bens/imagem</td></tr>
+        <tr><td class="k">Correios</td><td>empresa pública federal; logística/e-commerce</td></tr>
+        </tbody>
+      </table></div>
+      <div class="alert red"><span class="tag">Regra de ouro no dia</span> — comece pelo que domina, <b>não deixe nada em branco</b> (eliminando 2, o chute vira 50%) e reserve tempo para passar o gabarito a limpo.</div>
+    </div></section>
+
+    <!-- ============ 10. FONTES ============ -->
+    <section id="fontes"><div class="card">
+      <p class="eyebrow">Seção 10</p>
+      <h2 class="sec">Fontes oficiais — onde baixar</h2>
+      <div class="tw"><table>
+        <thead><tr><th>Material</th><th>Onde</th></tr></thead>
+        <tbody>
+        <tr><td class="k">Editais e provas anteriores (Correios 2024, IBFC)</td><td>ibfc.org.br · concursos.ibfc.org.br · correios.com.br (trabalhe conosco)</td></tr>
+        <tr><td class="k">Código de Conduta Ética e Integridade dos Correios</td><td>correios.com.br (acesso à informação / governança)</td></tr>
+        <tr><td class="k">Português e Matemática</td><td>gramáticas e materiais de ensino médio; provas IBFC anteriores</td></tr>
+        <tr><td class="k">Informática</td><td>apostilas de Windows/Office e segurança da informação</td></tr>
+        <tr><td class="k">Atualidades</td><td>portais de notícias confiáveis (leitura diária)</td></tr>
+        </tbody>
+      </table></div>
+      <p class="peg">Dica: baixe o <strong>Código de Ética dos Correios</strong> e leia inteiro — é curto e cai de forma literal.</p>
+    </div></section>
+
+    <!-- ============ 11. CLAUDE ============ -->
+    <section id="claude"><div class="card">
+      <p class="eyebrow">Seção 11</p>
+      <h2 class="sec">Seu tutor de IA — tire dúvidas e treine sem limite</h2>
+      <p>O site é o material fixo. Para <strong>questões ilimitadas e explicações personalizadas</strong>, use uma <strong>IA</strong> como professor particular. Tem dois jeitos:</p>
+      <div class="callout" style="margin-top:8px">
+        <h3 style="margin-top:0">✅ Jeito fácil (recomendado) — cole num chat de IA gratuito</h3>
+        <p>Abra <strong>Claude.ai</strong>, <strong>ChatGPT</strong> ou <strong>Gemini</strong> (grátis no navegador do celular), <strong>copie o texto abaixo</strong>, cole e envie. A IA vira seu tutor dos Correios na hora.</p>
+        <pre id="tutor-prompt" style="white-space:pre-wrap;word-break:break-word;background:var(--line-2);padding:12px 14px;border-radius:10px;font-size:13px;line-height:1.5;max-height:300px;overflow:auto;margin:10px 0">Você é meu PROFESSOR PARTICULAR e cursinho para o concurso dos Correios (cargo Agente de Correios / Carteiro, nível médio), banca IBFC, prova de múltipla escolha (A–D, uma correta). Eu começo quase do zero — ensine com paciência e da forma mais simples possível.\n\nRegras que você deve seguir sempre:\n1) Em cada tema, siga a ordem: APRENDA (explique do zero, com um exemplo do dia a dia) → ENTENDA (a regra enxuta) → NA PROVA (como cai e qual a pegadinha).\n2) Prioridade das matérias: Língua Portuguesa, Matemática, Noções de Informática, Conhecimentos Gerais (atualidades) e Código de Conduta Ética e Integridade dos Correios.\n3) Gere questões no formato múltipla escolha (A–D). Só mostre o gabarito depois que eu responder e explique CADA erro (o que marquei, por que erra, a regra certa) e por que as outras alternativas erram.\n4) Use revisão espaçada: ao fim, gere 5 flashcards do que eu errei e me lembre de revisar em 24 horas, 7 dias e 21 dias.\n5) Nunca invente regra, fórmula ou dado; se não tiver certeza, diga.\n\nComece me perguntando quanto tempo eu tenho hoje e qual matéria quero; então monte a sessão de hoje.</pre>
+        <button class="btn" type="button" onclick="try{var t=document.getElementById('tutor-prompt').innerText;if(navigator.clipboard){navigator.clipboard.writeText(t);}else{var r=document.createRange();r.selectNode(document.getElementById('tutor-prompt'));window.getSelection().removeAllRanges();window.getSelection().addRange(r);document.execCommand('copy');}this.textContent='✓ Copiado! Agora cole no chat da IA';}catch(e){this.textContent='Selecione o texto acima e copie';}">Copiar o prompt do tutor</button>
+        <p class="peg" style="margin:10px 0 0">Depois é só conversar: “me explique mais simples”, “10 questões de crase”, “corrija: 1-B, 2-C…”, “o que revisar hoje?”.</p>
+      </div>
+      <div class="alert blue" style="margin-top:16px">
+        <span class="tag">⚙️ Jeito avançado (opcional) — Claude Code</span>
+        Se você usa o <strong>Claude Code</strong>, crie uma pasta <code>correios-medio</code> com <code>CLAUDE.md</code>, <code>base_conhecimento_correios_medio.md</code> e a subpasta <code>leis/</code> (o Código de Ética dos Correios). Rode <code>claude</code> e peça sessões, simulados e correção.
+      </div>
+    </div></section>
+
+    <footer>
+      Material de estudo · Concurso Correios — Agente/Carteiro (nível médio) · banca IBFC · projetado pelo último edital (2024), a ser ajustado quando o novo sair.<br>
+      Confira sempre os dados no edital oficial. Bons estudos e boa prova. 📦
+    </footer>
+  </main>
+</div>
+<button class="back" id="back" aria-label="Voltar ao topo">↑</button>
+
+<script>
+/* ---------- tema ---------- */
+(function(){
+  var root=document.documentElement, key="dmae:theme";
+  try{var s=localStorage.getItem(key); if(s)root.setAttribute("data-theme",s);}catch(e){}
+  document.getElementById("theme").onclick=function(){
+    var cur=root.getAttribute("data-theme");
+    var dark=cur? cur==="dark" : matchMedia("(prefers-color-scheme:dark)").matches;
+    var nx=dark?"light":"dark"; root.setAttribute("data-theme",nx);
+    try{localStorage.setItem(key,nx);}catch(e){}
+  };
+})();
+/* ---------- countdown ---------- */
+(function(){
+  var prova=null; /* Correios: edital do próximo concurso ainda não saiu */
+  function upd(){var e=document.getElementById("cddays");if(e)e.textContent=prova?Math.max(0,Math.ceil((prova-new Date())/86400000))+" dias":"edital em breve";}
+  upd();
+})();
+/* ---------- menu mobile + TOC ativo ---------- */
+(function(){
+  var toc=document.getElementById("toc"),mb=document.getElementById("menub");
+  mb.onclick=function(){var o=toc.classList.toggle("open");document.body.classList.toggle("navopen",o);};
+  toc.addEventListener("click",function(e){if(e.target.tagName==="A"){toc.classList.remove("open");document.body.classList.remove("navopen");}});
+  var links=[].slice.call(toc.querySelectorAll("a"));
+  var map={}; links.forEach(function(a){map[a.getAttribute("href").slice(1)]=a;});
+  var obs=new IntersectionObserver(function(en){
+    en.forEach(function(x){ if(x.isIntersecting){ links.forEach(function(a){a.classList.remove("on");}); var a=map[x.target.id]; if(a)a.classList.add("on"); }});
+  },{rootMargin:"-64px 0px -70% 0px"});
+  document.querySelectorAll("section[id]").forEach(function(s){obs.observe(s);});
+  var back=document.getElementById("back");
+  addEventListener("scroll",function(){back.classList.toggle("show",scrollY>600);});
+  back.onclick=function(){scrollTo({top:0,behavior:"smooth"});};
+})();
+/* ---------- plano checklist ---------- */
+(function(){
+  function K(){return window.DMAE_KEY("plano");}
+  function readSt(){try{return JSON.parse(localStorage.getItem(K())||"{}");}catch(e){return{};}}
+  function renderProg(){
+    var boxes=document.querySelectorAll("#diario-list input");
+    var total=boxes.length,done=0;[].forEach.call(boxes,function(c){if(c.checked)done++;});
+    var pct=total?Math.round(done/total*100):0;
+    var el=document.getElementById("crono-prog");
+    if(el)el.innerHTML='<div class="cprow"><span><b>Progresso do plano diário</b></span><span class="cbar"><i style="width:'+pct+'%"></i></span><span>'+done+'/'+total+' dias ('+pct+'%)</span></div>';
+  }
+  window.DMAE_planoApply=function(){
+    var st=readSt();
+    document.querySelectorAll("#plano-list input, #diario-list input").forEach(function(c){
+      var on=!!st[c.id];c.checked=on;c.closest(".chk").classList.toggle("done",on);
+    });
+    renderProg();
+  };
+  document.querySelectorAll("#plano-list input, #diario-list input").forEach(function(c){
+    c.onchange=function(){
+      var st=readSt();st[c.id]=c.checked;try{localStorage.setItem(K(),JSON.stringify(st));}catch(e){}
+      c.closest(".chk").classList.toggle("done",c.checked);renderProg();
+      if(window.DMAE_syncPush)window.DMAE_syncPush();
+    };
+  });
+  var pr=document.getElementById("plano-reset");
+  if(pr)pr.onclick=function(){
+    if(!confirm("Desmarcar todos os dias e semanas do cronograma?"))return;
+    try{localStorage.removeItem(K());}catch(e){}
+    document.querySelectorAll("#plano-list input, #diario-list input").forEach(function(c){c.checked=false;c.closest(".chk").classList.remove("done");});
+    renderProg();
+    if(window.DMAE_syncPush)window.DMAE_syncPush();
+  };
+  window.DMAE_planoApply();
+})();
+
+/* ---------- SIMULADO ---------- */
+var SIM=[
+{b:"Língua Portuguesa (1–6)"},
+{n:1,t:"Assinale a alternativa em que a crase está correta.",o:["Ele se dedica à leitura.","Cheguei à pé.","Refiro-me à ela.","Fui à cavalo."],c:0,e:"“Dedicar-se a” + “a leitura” (fem.) = à. As demais: verbo/pronome/masculino sem crase."},
+{n:2,t:"Assinale a alternativa correta quanto à concordância.",o:["Houveram muitas cartas.","Fazem dez anos.","Existem encomendas atrasadas.","Chegou os pacotes."],c:2,e:"“Existir” concorda (“Existem”). Impessoais: “Houve”, “Faz dez anos”. D: “Chegaram”."},
+{n:3,t:"Assinale a frase corretamente pontuada.",o:["O carteiro, entregou as cartas.","Entregues as cartas, o carteiro voltou.","O gerente, aprovou a rota.","Comprou selos envelopes, e caixas."],c:1,e:"Oração reduzida anteposta pede vírgula. A/C separam sujeito do verbo; D erra a vírgula."},
+{n:4,t:"Em “Este é o pacote que chegou hoje”, a palavra “que” é:",o:["conjunção integrante","pronome relativo","preposição","advérbio"],c:1,e:"Retoma “o pacote” e tem função sintática → pronome relativo."},
+{n:5,t:"Assinale a alternativa com ortografia correta (Novo Acordo).",o:["idéia","assembléia","heroico","vôo"],c:2,e:"“Heroico” não tem acento; as demais são grafias antigas."},
+{n:6,t:"Na interpretação de texto, a alternativa correta é a que:",o:["traz opinião pessoal","está apoiada no texto","generaliza com “sempre”","contradiz o texto"],c:1,e:"A resposta se ancora no texto."},
+{b:"Matemática e Raciocínio (7–12)"},
+{n:7,t:"Um produto de R$ 200 recebe dois aumentos sucessivos de 10% e 20%. O preço final é:",o:["R$ 260","R$ 264","R$ 262","R$ 266"],c:1,e:"200×1,10×1,20 = 264."},
+{n:8,t:"30% de 250 é:",o:["70","75","80","85"],c:1,e:"0,30×250 = 75."},
+{n:9,t:"Se 4 carteiros entregam 800 cartas, quantas entregam 6 (mesmo ritmo)?",o:["1000","1200","900","1300"],c:1,e:"Regra de três direta: 800×6/4 = 1200."},
+{n:10,t:"A negação de “Todo carteiro é pontual” é:",o:["Nenhum carteiro é pontual.","Algum carteiro não é pontual.","Todo carteiro é impontual.","Nenhum carteiro é impontual."],c:1,e:"Negar “todo A é B” = existe A que não é B."},
+{n:11,t:"R$ 1.000 a juros simples de 2% ao mês por 5 meses rendem de juros:",o:["R$ 100","R$ 110","R$ 120","R$ 90"],c:0,e:"J = 1000×0,02×5 = 100."},
+{n:12,t:"A média de 10, 20 e 30 é:",o:["18","20","22","25"],c:1,e:"(10+20+30)/3 = 20."},
+{b:"Noções de Informática (13–18)"},
+{n:13,t:"No Excel, a função =MÉDIA(A1:A10):",o:["soma os valores","calcula a média dos valores","conta as células","ordena os valores"],c:1,e:"=MÉDIA calcula a média; quem soma é =SOMA."},
+{n:14,t:"Ransomware é um tipo de malware que:",o:["acelera o computador","criptografa os dados e pede resgate","organiza arquivos","faz backup automático"],c:1,e:"Ransomware sequestra/criptografa dados e pede resgate."},
+{n:15,t:"O atalho Ctrl+C serve para:",o:["colar","copiar","recortar","desfazer"],c:1,e:"Ctrl+C copia; Ctrl+V cola; Ctrl+X recorta; Ctrl+Z desfaz."},
+{n:16,t:"No e-mail, o campo Cco (cópia oculta) faz com que:",o:["todos vejam os destinatários","o destinatário fique oculto dos demais","o e-mail não seja enviado","o anexo seja removido"],c:1,e:"Cco = cópia oculta: os demais não veem esse destinatário."},
+{n:17,t:"Assinale a medida de segurança da informação.",o:["usar a mesma senha em tudo","clicar em links de e-mails suspeitos","ativar a autenticação em dois fatores","desativar o antivírus"],c:2,e:"2 fatores aumenta a segurança; as demais são inseguras."},
+{n:18,t:"Vírus e worm são a mesma coisa.",o:["Sim, são sinônimos","Não: worm se autopropaga; vírus precisa de hospedeiro","Sim, ambos são antivírus","Não: worm é um tipo de hardware"],c:1,e:"Vírus precisa de hospedeiro; worm se espalha sozinho pela rede."},
+{b:"Conhecimentos Gerais e Ética dos Correios (19–24)"},
+{n:19,t:"Os Correios (ECT) são, quanto à natureza jurídica:",o:["autarquia estadual","empresa pública federal","órgão da administração direta","fundação privada"],c:1,e:"A ECT é empresa pública federal."},
+{n:20,t:"Em relação a atualidades, a melhor estratégia de estudo é:",o:["decorar opiniões","ler manchetes diariamente e anotar fatos","ignorar o noticiário","estudar só história antiga"],c:1,e:"Atualidades: leitura diária + anotação de fatos."},
+{n:21,t:"Segundo o Código de Conduta Ética dos Correios, receber vantagem indevida em razão do cargo é:",o:["permitido se for pequeno valor","vedado","obrigatório","incentivado"],c:1,e:"Receber vantagem indevida é vedado."},
+{n:22,t:"Zelar pelo sigilo das informações e pela imagem da empresa é:",o:["uma conduta esperada do empregado","opcional","proibido","irrelevante"],c:0,e:"É conduta esperada (dever ético)."},
+{n:23,t:"O canal para relatar violações à ética/integridade nos Correios é, tipicamente:",o:["as redes sociais pessoais","a ouvidoria/canal de ética","um colega qualquer","ninguém"],c:1,e:"Denúncias vão à ouvidoria/canal de ética."},
+{n:24,t:"A impessoalidade, como princípio ético, significa:",o:["favorecer amigos","tratar todos igualmente, sem favorecimento","atender só conhecidos","agir por interesse próprio"],c:1,e:"Impessoalidade = tratamento igualitário, sem favorecimento."}
+];
+/* Painel "Revise seus erros" — usado por todos os simulados e treinos */
+window.renderErrPanel=function(host,anchorEl,errors,total){
+  var id=host.id+"-errpanel";
+  var old=document.getElementById(id); if(old)old.parentNode.removeChild(old);
+  var d=document.createElement("div"); d.className="errpanel"; d.id=id;
+  if(!errors.length){
+    d.className+=" zero";
+    d.innerHTML='<h4>Você não errou nenhuma! 🎉</h4><p>Acertou todas as '+total+'. Refaça daqui a alguns dias sem olhar — se continuar acertando, está fixado.</p>';
+  } else {
+    function _txt(o){var s=o.querySelectorAll("span"); return s.length?s[s.length-1].innerHTML:o.textContent;}
+    var lis=errors.map(function(e){
+      var optsHTML="", youTxt=(e.you||'em branco'), corrTxt=e.correct;
+      var qd=document.getElementById(e.anchor);
+      if(qd){
+        var opts=qd.querySelectorAll(".opt");
+        if(opts.length){
+          optsHTML='<div class="eopts">'+[].map.call(opts,function(o){
+            var right=o.classList.contains("right"), wrong=o.classList.contains("wrong");
+            var mk=right?'✓ ':(wrong?'✗ ':'');
+            return '<div class="eopt'+(right?' r':'')+(wrong?' w':'')+'">'+mk+_txt(o)+'</div>';
+          }).join("")+'</div>';
+          if(opts.length<=2){ /* Certo/Errado: usar o texto, não a letra */
+            var r=qd.querySelector(".opt.right"), w=qd.querySelector(".opt.wrong");
+            if(r)corrTxt=_txt(r);
+            youTxt = w?_txt(w):'em branco';
+          }
+        }
+      }
+      return '<li><a href="#'+e.anchor+'">Questão '+e.n+'</a> — você marcou <b class="you">'+youTxt+'</b>; a certa é <b class="ok">'+corrTxt+'</b>.'
+        +'<div class="eq">"'+e.qt+'"</div>'+optsHTML
+        +'<div class="ei"><b>Entenda o porquê:</b> '+e.expl+'</div></li>';
+    }).join("");
+    d.innerHTML='<h4>Revise seus erros — '+errors.length+' de '+total+'</h4>'
+      +'<p><b>Não passe reto:</b> leia o porquê de cada uma. É entendendo o motivo (não decorando a letra) que você fixa na memória e reconhece a mesma pegadinha na prova. Clique no número para reler a questão inteira.</p>'
+      +'<ol>'+lis+'</ol>'
+      +'<p class="tip">Anote cada erro no seu caderno de erros: o que errou · a regra certa · como não repetir. Revise esse caderno em 24 h, 7 dias e 21 dias.</p>';
+  }
+  anchorEl.parentNode.insertBefore(d,anchorEl.nextSibling);
+  d.scrollIntoView({behavior:"smooth",block:"nearest"});
+  return d;
+};
+
+/* Cronômetro de prova (treina o ritmo das 3 h) */
+window.attachTimer=function(simbar,minutes){
+  if(!simbar||simbar.querySelector(".timer"))return;
+  var total=minutes*60,left=total,iv=null;
+  function two(n){return(n<10?"0":"")+n;}
+  function fmt(s){var h=Math.floor(s/3600),m=Math.floor((s%3600)/60),x=s%60;return h>0?h+":"+two(m)+":"+two(x):m+":"+two(x);}
+  var wrap=document.createElement("span");wrap.className="timer";
+  var disp=document.createElement("b");disp.className="tdisp";
+  var start=document.createElement("button");start.type="button";start.className="btn ghost tbtn2";start.textContent="▶ Cronômetro";
+  var reset=document.createElement("button");reset.type="button";reset.className="btn ghost tbtn2";reset.textContent="Zerar";reset.style.display="none";
+  function paint(){disp.textContent="⏱ "+fmt(left);disp.classList.toggle("low",left<=300);}
+  function stop(){if(iv){clearInterval(iv);iv=null;}start.textContent="▶ Retomar";}
+  function tick(){left--;if(left<=0){left=0;stop();disp.textContent="⏱ Tempo esgotado";disp.classList.add("low");return;}paint();}
+  paint();
+  start.onclick=function(){if(iv){stop();return;}if(left<=0)left=total;iv=setInterval(tick,1000);start.textContent="⏸ Pausar";reset.style.display="";};
+  reset.onclick=function(){stop();left=total;paint();start.textContent="▶ Cronômetro";};
+  wrap.appendChild(disp);wrap.appendChild(start);wrap.appendChild(reset);
+  simbar.appendChild(wrap);
+};
+
+/* Histórico de desempenho (salvo no navegador) */
+window.recordScore=function(key,label,pct,ac,total,pts,mp,bymat){
+  var K=window.DMAE_KEY("scores"),arr=[];
+  try{arr=JSON.parse(localStorage.getItem(K)||"[]");}catch(e){}
+  function two2(n){return(n<10?"0":"")+n;}
+  var d=new Date();
+  var rec={k:key,l:label,p:pct,a:ac,n:total,d:two2(d.getDate())+"/"+two2(d.getMonth()+1)};
+  if(pts!=null){rec.pt=pts;rec.mp=mp;}
+  if(bymat)rec.m=bymat;
+  arr.push(rec);
+  if(arr.length>40)arr=arr.slice(-40);
+  try{localStorage.setItem(K,JSON.stringify(arr));}catch(e){}
+  if(window.renderDesempenho)window.renderDesempenho();
+  if(window.renderProxima)window.renderProxima();
+  if(window.DMAE_syncPush)window.DMAE_syncPush();
+};
+/* agrega acerto por matéria a partir do histórico */
+window.DMAE_fraca=function(scores){
+  var agg={};(scores||[]).forEach(function(s){if(s.m){for(var k in s.m){agg[k]=agg[k]||{ok:0,tot:0};agg[k].ok+=s.m[k].ok;agg[k].tot+=s.m[k].tot;}}});
+  var ks=Object.keys(agg).filter(function(k){return agg[k].tot>=3;});
+  if(!ks.length)return null;
+  ks.sort(function(a,b){return (agg[a].ok/agg[a].tot)-(agg[b].ok/agg[b].tot);});
+  return {mat:ks[0],pct:Math.round(agg[ks[0]].ok/agg[ks[0]].tot*100)};
+};
+/* recomendação personalizada "Sua próxima ação" */
+window.renderProxima=function(){
+  var host=document.getElementById("proxima");if(!host)return;
+  var scores=[],cad=[];
+  try{scores=JSON.parse(localStorage.getItem(window.DMAE_KEY("scores"))||"[]");}catch(e){}
+  try{cad=JSON.parse(localStorage.getItem(window.DMAE_KEY("cadernoerros"))||"[]");}catch(e){}
+  var txt,href,bt;
+  if(!scores.length){
+    txt="Faça o <b>Simulado 1</b> cronometrado, <b>sem estudar antes</b>. É o diagnóstico: mostra onde você está mais fraco e já enche seu caderno de erros.";
+    href="#simulado";bt="Fazer o Simulado 1 →";
+  } else if(cad.length>0){
+    txt="Você tem <b>"+cad.length+"</b> quest"+(cad.length>1?"ões":"ão")+" no seu <b>caderno de erros</b>. Refazer o próprio erro é o que mais fixa — comece por aí.";
+    href="#caderno";bt="Abrir meu caderno →";
+  } else {
+    txt="Sem erros pendentes! Reforce a matéria que mais cai: treine <b>Só Língua Portuguesa</b>.";
+    href="#especifico";bt="Treinar Português →";
+  }
+  var f=window.DMAE_fraca(scores),foco="";
+  if(f)foco='<p class="foco">🎯 Sua matéria mais fraca até agora: <b>'+f.mat+'</b> ('+f.pct+'% de acerto). Dê atenção extra a ela.</p>';
+  var fcDue=0;try{var _fs=JSON.parse(localStorage.getItem(window.DMAE_KEY("fcsrs"))||"{}");var _nw=Date.now();for(var _k in _fs){if(_fs[_k]&&(_fs[_k].due||0)<=_nw)fcDue++;}}catch(e){}
+  var fcNud=fcDue>0?'<p class="foco">🔁 Você tem <b>'+fcDue+'</b> flashcard'+(fcDue>1?"s":"")+' para revisar hoje (revisão espaçada). <a href="#flashcards">Revisar agora →</a></p>':"";
+  host.innerHTML='<h4>Sua próxima ação</h4><p>'+txt+'</p><a class="btn" href="'+href+'">'+bt+'</a>'+foco+fcNud;
+  host.hidden=false;
+};
+window.renderDesempenho=function(){
+  var host=document.getElementById("desempenho");if(!host)return;
+  var arr=[];try{arr=JSON.parse(localStorage.getItem(window.DMAE_KEY("scores"))||"[]");}catch(e){}
+  if(!arr.length){host.innerHTML='<p class="dhint">Faça um simulado e clique em <b>Corrigir</b>: suas notas ficam salvas aqui para você acompanhar a evolução.</p>';return;}
+  var best={},bpt={},bmp={};arr.forEach(function(s){if(best[s.l]==null||s.p>best[s.l])best[s.l]=s.p;if(s.pt!=null&&(bpt[s.l]==null||s.pt>bpt[s.l])){bpt[s.l]=s.pt;bmp[s.l]=s.mp;}});
+  var bestHTML=Object.keys(best).map(function(l){
+    if(bpt[l]!=null){var ok=bpt[l]>=25;return '<span class="dchip">'+l+': <b>'+bpt[l]+'/'+bmp[l]+' pts</b> '+(ok?'✅':'⚠️')+'</span>';}
+    return '<span class="dchip">'+l+': <b>'+best[l]+'%</b></span>';
+  }).join("");
+  var last=arr.slice(-6).reverse().map(function(s){var nota=s.pt!=null?(s.pt+'/'+s.mp+' pts · '+s.p+'%'):(s.a+'/'+s.n+' ('+s.p+'%)');return '<li>'+s.d+' · '+s.l+' — <b>'+nota+'</b></li>';}).join("");
+  var f=window.DMAE_fraca?window.DMAE_fraca(arr):null;
+  var focoD=f?'<p class="dhint" style="margin:0 0 8px">🎯 Matéria mais fraca: <b>'+f.mat+'</b> ('+f.pct+'%) — foque nela.</p>':'';
+  host.innerHTML='<div class="dbest"><span class="dlbl">Melhor nota:</span> '+bestHTML+'</div>'+focoD+'<p class="dhint" style="margin:0 0 8px">✅ = atingiu o mínimo de 30 pontos do edital.</p><ol class="dlast">'+last+'</ol><button class="btn ghost dclear" type="button">Limpar histórico</button>';
+  host.querySelector(".dclear").onclick=function(){try{localStorage.removeItem(window.DMAE_KEY("scores"));}catch(e){}window.renderDesempenho();};
+};
+
+(function(){
+  var box=document.getElementById("sim"),html="";
+  SIM.forEach(function(q,i){
+    if(q.b){html+='<div class="blocklabel">'+q.b+'</div>';}
+    if(q.passage){html+='<div class="passage">'+q.passage+'</div>';}
+    if(q.n){
+      html+='<div class="q" data-c="'+q.c+'" data-i="'+i+'" id="simq'+q.n+'"><div class="qn">Questão '+q.n+'</div><div class="qt">'+q.t+'</div>';
+      "ABCD".split("").forEach(function(L,j){
+        html+='<label class="opt"><input type="radio" name="q'+q.n+'" value="'+j+'"><span class="lt">'+L+')</span><span>'+q.o[j]+'</span></label>';
+      });
+      html+='<div class="expl"><b>Gabarito: '+"ABCD"[q.c]+'.</b> '+q.e+'</div></div>';
+    }
+  });
+  box.innerHTML=html;
+  var total=SIM.filter(function(q){return q.n;}).length;
+  window.__SIM1=SIM.filter(function(q){return q.t;}).map(function(q){return {t:q.t,o:q.o,c:q.c,e:q.e};});
+
+  var LT="ABCD".split("");
+  document.getElementById("corrigir").onclick=function(){
+    var acertos=0, errs=[], cadErrs=[], pts=0, maxpts=0, byMat={}, curMat="";
+    SIM.forEach(function(q){
+      if(q.b){curMat=q.b.replace(/\s*\(.*\)\s*/,"").replace(/\s+[—-]\s.*$/,"").trim();return;}
+      if(!q.n)return;
+      var qd=document.getElementById('simq'+q.n);
+      if(!qd)return;
+      var opts=qd.querySelectorAll('.opt');
+      var sel=qd.querySelector('input:checked');
+      opts.forEach(function(o){o.classList.remove('right','wrong');});
+      if(opts[q.c])opts[q.c].classList.add('right');
+      var acertou=false;
+      if(sel){var v=+sel.value; if(v===q.c){acertos++;acertou=true;} else {opts[v].classList.add('wrong');}}
+      qd.querySelector('.expl').classList.add('show');
+      var w=/específ/i.test(curMat)?2:1; maxpts+=w; byMat[curMat]=byMat[curMat]||{ok:0,tot:0}; byMat[curMat].tot++;
+      if(acertou){pts+=w;byMat[curMat].ok++;}
+      if(!acertou){
+        errs.push({n:q.n,anchor:'simq'+q.n,qt:q.t,you:sel?LT[+sel.value]:'',correct:LT[q.c],expl:q.e});
+        cadErrs.push({label:"Simulado 1",t:q.t,o:q.o,c:q.c,e:q.e});
+      }
+    });
+    var pct=Math.round(acertos/total*100);
+    var zeros=Object.keys(byMat).filter(function(m){return byMat[m].ok===0;});
+    var st=zeros.length?('<b style="color:var(--red)">⚠️ Você zerou: '+zeros.join(", ")+'</b> — no critério do edital, zerar qualquer conteúdo reprova.'):(pts>=Math.round(maxpts*0.6)?'<b style="color:var(--green)">✅ Você atingiu 60% dos pontos deste simulado e não zerou — no ritmo de aprovação (a prova exige mín. 30 de 50 e sem zerar).</b> Agora suba a nota!':'<b>Abaixo de 60% dos pontos.</b> A prova pede no mínimo 30 de 50 — reveja os erros abaixo.');
+    document.getElementById("scorebox").innerHTML='Nota: <b>'+pts+'</b>/'+maxpts+' pontos · '+acertos+'/'+total+' acertos ('+pct+'%).<br>'+st;
+    window.renderErrPanel(document.getElementById("simulado"),document.querySelector("#simulado .simbar"),errs,total);
+    window.recordScore("sim1","Simulado 1",pct,acertos,total,pts,maxpts,byMat);
+    if(window.saveErrors)window.saveErrors(cadErrs);
+  };
+  document.getElementById("limpar").onclick=function(){
+    box.querySelectorAll('input:checked').forEach(function(i){i.checked=false;});
+    box.querySelectorAll('.opt').forEach(function(o){o.classList.remove('right','wrong');});
+    box.querySelectorAll('.expl').forEach(function(e){e.classList.remove('show');});
+    document.getElementById("scorebox").textContent='';
+    var ep=document.getElementById("simulado-errpanel"); if(ep)ep.parentNode.removeChild(ep);
+  };
+  window.attachTimer(document.querySelector("#simulado .simbar"),180);
+})();
+if(window.renderDesempenho)window.renderDesempenho();
+if(window.renderProxima)window.renderProxima();
+
+/* ---------- FLASHCARDS ---------- */
+var FC=[
+["Formato da prova (Correios/IBFC)","50 questões, múltipla escolha (A–D). Não deixe nada em branco."],
+["Disciplinas","Português, Matemática, Noções de Informática, Conhecimentos Gerais e Código de Ética dos Correios."],
+["Correios (ECT)","Empresa pública federal, vinculada ao Ministério das Comunicações."],
+["Crase — teste","Troque por masculino: deu 'ao' = tem crase."],
+["'Houveram' existe?","Não nesse sentido: haver=existir é impessoal → 'Houve'."],
+["Regência: preferir","Preferir X A Y (nunca 'do que')."],
+["Aumentos sucessivos","Multiplicam: +10% e +20% = +32%."],
+["Regra de três inversa","Sentidos opostos: mais pessoas, menos tempo."],
+["Juros simples × composto","Simples J=C·i·t; composto rende 'juro sobre juro'."],
+["Negação de 'se p então q'","'p e não q'."],
+["=SOMA × =MÉDIA","=SOMA soma; =MÉDIA calcula a média."],
+["Atalhos","Ctrl+C copiar · Ctrl+V colar · Ctrl+Z desfazer · Ctrl+X recortar."],
+["Extensões","docx=Word · xlsx=Excel · pdf=documento · pptx=PowerPoint."],
+["Cc × Cco","Cc: todos veem; Cco: destinatário oculto."],
+["Vírus × worm","Vírus precisa de hospedeiro; worm se autopropaga."],
+["Ransomware","Criptografa dados e pede resgate; defesa = backup."],
+["Phishing","Golpe para roubar dados (engenharia social)."],
+["Senha forte","Mistura letras, números e símbolos; + 2 fatores."],
+["Ética: vantagem indevida","É vedado receber; usar o cargo em proveito próprio também."],
+["Ética: sigilo","Zelar pelo sigilo das informações é dever."],
+["Ética: conflito de interesses","Deve ser evitado e comunicado."],
+["Ética: canal de denúncia","Ouvidoria / canal de ética dos Correios."],
+["Impessoalidade","Tratar todos igualmente, sem favorecimento."],
+["Correios e e-commerce","O e-commerce aumentou as entregas de encomendas."],
+["Atualidades","Ler notícias com frequência; anotar 3 fatos por dia."],
+["Mediana","Valor central com os dados ordenados."],
+["Explicativa × restritiva","Com vírgula = todos; sem vírgula = só alguns."],
+["Estratégia no dia","Todas valem igual: não deixe em branco; eliminando 2, chute (50%)."]
+];
+(function(){
+  var box=document.getElementById("fcs"); if(!box||typeof FC==="undefined")return;
+  function K(){return window.DMAE_KEY("fcsrs");}
+  function readSt(){try{return JSON.parse(localStorage.getItem(K())||"{}");}catch(e){return {};}}
+  function writeSt(s){try{localStorage.setItem(K(),JSON.stringify(s));}catch(e){} if(window.DMAE_syncPush)window.DMAE_syncPush();}
+  var INT=[0,1,3,7,21], DAY=86400000;
+  var order=FC.map(function(_,i){return i;}), mode="todos", allOpen=false;
+  function due(idx,st){var c=st[idx];return !c || (c.due||0)<=Date.now();}
+  function boxOf(idx,st){return (st[idx]&&st[idx].box)||1;}
+  function render(){
+    var st=readSt();
+    var arr=order.filter(function(idx){return mode==="hoje"?due(idx,st):true;});
+    if(mode==="hoje"&&!arr.length){
+      box.innerHTML='<div class="errpanel zero"><h4>Tudo revisado por hoje! 🎉</h4><p>Nenhum cartão vencido. Volte amanhã ou toque em “Ver todos” para revisar mesmo assim.</p></div>';
+    } else {
+      box.innerHTML=arr.map(function(idx,pos){
+        var b=boxOf(idx,st);
+        return '<div class="fc" data-i="'+idx+'"><div class="fn">Flashcard '+(pos+1)+' · caixa '+b+'/5</div><div class="fq">'+FC[idx][0]+'</div><div class="fa">'+FC[idx][1]+'<div class="srs"><button type="button" class="btn ghost srs-no">Não sei ↺</button><button type="button" class="btn srs-yes">Sei ✓</button></div></div><div class="hint">toque para ver a resposta</div></div>';
+      }).join("");
+    }
+    var due0=order.filter(function(idx){return due(idx,st);}).length;
+    var cc=document.getElementById("fc-count"); if(cc)cc.textContent=FC.length+' cartões · '+due0+' para revisar hoje';
+  }
+  render();
+  box.addEventListener("click",function(e){
+    var y=e.target.closest(".srs-yes"), n=e.target.closest(".srs-no");
+    if(y||n){
+      e.stopPropagation();
+      var card=(y||n).closest(".fc"); if(!card)return;
+      var idx=+card.getAttribute("data-i");
+      var st=readSt(); var c=st[idx]||{box:1};
+      if(y){c.box=Math.min(5,(c.box||1)+1);} else {c.box=1;}
+      c.due=Date.now()+INT[c.box-1]*DAY; st[idx]=c; writeSt(st);
+      render(); return;
+    }
+    var fc=e.target.closest(".fc"); if(fc)fc.classList.toggle("open");
+  });
+  var sh=document.getElementById("fc-shuffle");
+  if(sh)sh.onclick=function(){for(var i=order.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=order[i];order[i]=order[j];order[j]=t;}render();};
+  var al=document.getElementById("fc-all");
+  if(al)al.onclick=function(){allOpen=!allOpen;box.querySelectorAll(".fc").forEach(function(c){c.classList.toggle("open",allOpen);});};
+  if(sh&&sh.parentNode){
+    var rb=document.createElement("button"); rb.type="button"; rb.className="btn ghost"; rb.id="fc-today"; rb.textContent="Revisar hoje";
+    sh.parentNode.insertBefore(rb,sh);
+    rb.onclick=function(){mode=(mode==="hoje"?"todos":"hoje"); rb.textContent=(mode==="hoje"?"Ver todos":"Revisar hoje"); render();};
+  }
+  window.DMAE_fcApply=render;
+})();
+</script>
+<script>
+/* ===== Motor genérico de provas/treinos (aula + questões + correção) ===== */
+(function(){
+  var L="ABCD".split("");
+  function qHTML(q,n){
+    var h='<div class="q" data-c="'+q.c+'"><div class="qn">'+(q.label?q.label:('Questão '+n))+'</div><div class="qt">'+q.t+'</div>';
+    for(var j=0;j<q.o.length;j++){h+='<label class="opt"><input type="radio"><span class="lt">'+L[j]+')</span><span>'+q.o[j]+'</span></label>';}
+    h+='<div class="expl"><b>Gabarito: '+L[q.c]+'.</b> '+q.e+'</div></div>';
+    return h;
+  }
+  function wire(host){
+    var qs=[].slice.call(host.querySelectorAll(".q"));
+    qs.forEach(function(qd,i){qd.id=host.id+"_q"+(i+1);[].forEach.call(qd.querySelectorAll("input"),function(inp){inp.name=host.id+"_"+i;});});
+    var mats=[],curMat="";
+    [].forEach.call(host.children,function(ch){
+      if(ch.classList&&ch.classList.contains("blocklabel"))curMat=ch.textContent.replace(/\s*\(.*\)\s*/,"").replace(/\s+[—-]\s.*$/,"").trim();
+      else if(ch.classList&&ch.classList.contains("q"))mats.push(curMat);
+    });
+    var structured=host.id.indexOf("quiz-sim")===0;
+    var b=document.createElement("div"); b.className="simbar";
+    b.innerHTML='<button class="btn cor">Corrigir</button><button class="btn ghost lim">Limpar</button><span class="score sc" aria-live="polite"></span>';
+    host.appendChild(b);
+    var isSim=host.id.indexOf("quiz-")===0;
+    var simLabel=host.id==="quiz-aleatorio"?"Simulado aleatório":"Simulado "+host.id.replace("quiz-sim","");
+    if(isSim)window.attachTimer(b,180);
+    b.querySelector(".cor").onclick=function(){
+      var ac=0, errs=[], cadErrs=[], pts=0, maxpts=0, byMat={};
+      var card=host.closest(".card"), cardh3=card&&card.querySelector("h3");
+      var lbl=isSim?simLabel:(cardh3?cardh3.textContent.replace("Aula + treino: ",""):"Treino");
+      qs.forEach(function(qd,i){
+        var opts=qd.querySelectorAll(".opt"), ins=qd.querySelectorAll("input"), c=+qd.getAttribute("data-c");
+        var sel=qd.querySelector("input:checked");
+        [].forEach.call(opts,function(o){o.classList.remove("right","wrong");});
+        if(opts[c])opts[c].classList.add("right");
+        var acertou=false, v=-1;
+        if(sel){v=[].indexOf.call(ins,sel); if(v===c){ac++;acertou=true;} else if(opts[v])opts[v].classList.add("wrong");}
+        qd.querySelector(".expl").classList.add("show");
+        if(structured){var w=/específ/i.test(mats[i]||"")?2:1;maxpts+=w;var mk=mats[i]||"?";byMat[mk]=byMat[mk]||{ok:0,tot:0};byMat[mk].tot++;if(acertou){pts+=w;byMat[mk].ok++;}}
+        if(!acertou){
+          var expl=qd.querySelector(".expl").innerHTML.replace(/^\s*<b>.*?<\/b>\s*/,"");
+          errs.push({n:i+1,anchor:qd.id,qt:qd.querySelector(".qt").innerHTML,you:v>=0?L[v]:"",correct:L[c],expl:expl});
+          var oarr=[].map.call(opts,function(o){var sp=o.querySelectorAll("span");return sp[sp.length-1].innerHTML;});
+          cadErrs.push({label:lbl,t:qd.querySelector(".qt").innerHTML,o:oarr,c:c,e:expl});
+        }
+      });
+      var pct=Math.round(ac/qs.length*100);
+      if(structured){
+        var zeros=Object.keys(byMat).filter(function(m){return byMat[m].ok===0;});
+        var st=zeros.length?('<b style="color:var(--red)">⚠️ Você zerou: '+zeros.join(", ")+'</b> — no critério do edital, zerar qualquer conteúdo reprova.'):(pts>=Math.round(maxpts*0.6)?'<b style="color:var(--green)">✅ Você atingiu 60% dos pontos deste simulado e não zerou — no ritmo de aprovação (a prova exige mín. 30 de 50 e sem zerar).</b> Agora suba a nota!':'<b>Abaixo de 60% dos pontos.</b> A prova pede no mínimo 30 de 50 — reveja os erros abaixo.');
+        b.querySelector(".sc").innerHTML="Nota: <b>"+pts+"</b>/"+maxpts+" pontos · "+ac+"/"+qs.length+" acertos ("+pct+"%).<br>"+st;
+      } else {
+        var msg=pct>=70?"Ótimo!":pct>=50?"Bom — revise os erros abaixo.":"Releia a aula e veja os erros abaixo.";
+        b.querySelector(".sc").innerHTML="Acertos: <b>"+ac+"</b>/"+qs.length+" ("+pct+"%). "+msg;
+      }
+      window.renderErrPanel(host,b,errs,qs.length);
+      if(isSim)window.recordScore(host.id,simLabel,pct,ac,qs.length,structured?pts:null,structured?maxpts:null,structured?byMat:null);
+      if(host.id!=="caderno-list"&&window.saveErrors)window.saveErrors(cadErrs);
+    };
+    b.querySelector(".lim").onclick=function(){
+      host.querySelectorAll("input:checked").forEach(function(i){i.checked=false;});
+      host.querySelectorAll(".opt").forEach(function(o){o.classList.remove("right","wrong");});
+      host.querySelectorAll(".expl").forEach(function(e){e.classList.remove("show");});
+      b.querySelector(".sc").textContent="";
+      var ep=document.getElementById(host.id+"-errpanel"); if(ep)ep.parentNode.removeChild(ep);
+    };
+  }
+  function mountList(host,items){ // items: {b},{passage},{t,o,c,e}
+    var h="",n=0;
+    items.forEach(function(q){
+      if(q.b)h+='<div class="blocklabel">'+q.b+'</div>';
+      if(q.passage)h+='<div class="passage">'+q.passage+'</div>';
+      if(q.t){n++;h+=qHTML(q,n);}
+    });
+    host.innerHTML=h; wire(host);
+  }
+  function mountQs(host,qs){var h="";qs.forEach(function(q,i){h+=qHTML(q,i+1);});host.innerHTML=h;wire(host);}
+
+  /* ===== Caderno de erros (salvo no navegador) ===== */
+  window.saveErrors=function(list){
+    if(!list||!list.length)return;
+    var K=window.DMAE_KEY("cadernoerros"),arr=[];
+    try{arr=JSON.parse(localStorage.getItem(K)||"[]");}catch(e){}
+    var seen={};arr.forEach(function(x){seen[x.id]=1;});
+    list.forEach(function(it){
+      var id=it.t;
+      if(!seen[id]){arr.push({id:id,label:it.label,t:it.t,o:it.o,c:it.c,e:it.e});seen[id]=1;}
+    });
+    if(arr.length>200)arr=arr.slice(-200);
+    try{localStorage.setItem(K,JSON.stringify(arr));}catch(e){}
+    if(window.renderCaderno)window.renderCaderno();
+    if(window.DMAE_syncPush)window.DMAE_syncPush();
+  };
+  window.renderCaderno=function(){
+    var host=document.getElementById("caderno-list");if(!host)return;
+    var arr=[];try{arr=JSON.parse(localStorage.getItem(window.DMAE_KEY("cadernoerros"))||"[]");}catch(e){}
+    var cnt=document.getElementById("cad-count");if(cnt)cnt.textContent=arr.length?("· "+arr.length):"";
+    if(!arr.length){host.innerHTML='<p class="dhint">Seu caderno está vazio. Assim que você errar questões nos simulados ou treinos, elas aparecem aqui para você refazer.</p>';if(window.renderProxima)window.renderProxima();return;}
+    mountQs(host,arr);
+    if(window.renderProxima)window.renderProxima();
+  };
+  (function(){
+    var rm=document.getElementById("cad-remove"),cl=document.getElementById("cad-clear");
+    if(rm)rm.onclick=function(){
+      var arr=[];try{arr=JSON.parse(localStorage.getItem(window.DMAE_KEY("cadernoerros"))||"[]");}catch(e){}
+      var qs=document.querySelectorAll("#caderno-list .q");
+      if(!arr.length||qs.length!==arr.length){window.renderCaderno();return;}
+      var keep=[];
+      [].forEach.call(qs,function(qd,i){
+        var ins=qd.querySelectorAll("input"),sel=qd.querySelector("input:checked");
+        var ok=sel&&[].indexOf.call(ins,sel)===+qd.getAttribute("data-c");
+        if(!ok)keep.push(arr[i]);
+      });
+      try{localStorage.setItem(window.DMAE_KEY("cadernoerros"),JSON.stringify(keep));}catch(e){}
+      window.renderCaderno();
+      if(window.DMAE_syncPush)window.DMAE_syncPush();
+      var host=document.getElementById("caderno");if(host)host.scrollIntoView({behavior:"smooth",block:"start"});
+    };
+    if(cl)cl.onclick=function(){
+      if(!confirm("Apagar todas as questões do caderno de erros?"))return;
+      try{localStorage.removeItem(window.DMAE_KEY("cadernoerros"));}catch(e){}
+      window.renderCaderno();
+      if(window.DMAE_syncPush)window.DMAE_syncPush();
+    };
+    var dl=document.getElementById("cad-download");
+    if(dl)dl.onclick=function(){
+      var arr=[];try{arr=JSON.parse(localStorage.getItem(window.DMAE_KEY("cadernoerros"))||"[]");}catch(e){}
+      if(!arr.length){alert("Seu caderno está vazio — faça um simulado ou treino primeiro.");return;}
+      var LL="ABCD".split("");
+      var body=arr.map(function(q,i){
+        var opts=q.o.map(function(o,j){return '<div>'+(q.o.length<=2?'':LL[j]+') ')+o+'</div>';}).join("");
+        return '<div class="q"><p><b>'+(i+1)+'. ['+q.label+']</b> '+q.t+'</p><div class="o">'+opts+'</div><div class="a"><b>Gabarito: '+(q.o.length<=2?q.o[q.c]:LL[q.c]+'.')+'</b> '+q.e+'</div></div>';
+      }).join("");
+      var html='<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>Caderno de erros - Correios (médio)</title>'
+        +'<style>body{font-family:Arial,Helvetica,sans-serif;max-width:820px;margin:24px auto;padding:0 18px;color:#111;line-height:1.5}'
+        +'h1{font-size:20px} .q{border-bottom:1px solid #ccc;padding:12px 0} .o div{margin:2px 0} '
+        +'.a{background:#eef2f4;padding:8px 10px;border-radius:6px;margin-top:6px;font-size:14px}</style></head>'
+        +'<body><h1>Meu caderno de erros — Correios (médio) ('+arr.length+' questões)</h1>'
+        +'<p>Refaça cada uma tapando o gabarito; leia a explicação só depois de responder.</p>'+body+'</body></html>';
+      try{
+        var blob=new Blob([html],{type:"text/html;charset=utf-8"});
+        var url=URL.createObjectURL(blob);
+        var a=document.createElement("a");a.href=url;a.download="caderno-de-erros-dmae.html";
+        document.body.appendChild(a);a.click();document.body.removeChild(a);
+        setTimeout(function(){URL.revokeObjectURL(url);},3000);
+      }catch(e){alert("Não foi possível baixar neste navegador.");}
+    };
+    window.renderCaderno();
+  })();
+
+  /* ===================== SIMULADO 2 ===================== */
+  var SIM2=[
+{b:"Língua Portuguesa"},
+{t:"Assinale a alternativa SEM crase.",o:["Entreguei à secretária.","Refiro-me à norma.","Estou disposto à ajudar.","Compareceu à reunião."],c:2,e:"Não há crase antes de verbo (“a ajudar”)."},
+{t:"Assinale a correta quanto à regência.",o:["Assisti o filme.","Obedeço às regras.","Prefiro ir do que ficar.","Cheguei no trabalho."],c:1,e:"“Obedecer a” (TI): obedeço às regras. As demais erram a regência."},
+{t:"“Os funcionários, que se atrasaram, foram advertidos.” A oração é:",o:["restritiva","explicativa (todos se atrasaram)","objetiva","adverbial"],c:1,e:"Entre vírgulas = explicativa (todos)."},
+{t:"Assinale a palavra escrita corretamente.",o:["excessão","previlégio","beneficência","adevogado"],c:2,e:"“Beneficência” está correta; as outras têm erro de grafia."},
+{b:"Matemática"},
+{t:"25% de 240 é:",o:["50","60","70","48"],c:1,e:"0,25×240 = 60."},
+{t:"Um item de R$ 80 com 25% de desconto sai por:",o:["R$ 55","R$ 60","R$ 65","R$ 70"],c:1,e:"80×0,75 = 60."},
+{t:"Se 3 máquinas fazem em 8 dias, 6 máquinas fazem em (inversa):",o:["16 dias","4 dias","6 dias","2 dias"],c:1,e:"Inversa: 3×8 = 6×x → x=4."},
+{t:"A negação de “se chove, então molha” é:",o:["se molha, chove","se não chove, não molha","chove e não molha","não chove ou molha"],c:2,e:"~(p→q)=p∧~q."},
+{b:"Noções de Informática"},
+{t:"O atalho Ctrl+Z serve para:",o:["salvar","desfazer","imprimir","copiar"],c:1,e:"Ctrl+Z desfaz a última ação."},
+{t:"Phishing é:",o:["um antivírus","uma técnica de golpe para roubar dados","um tipo de impressora","um backup"],c:1,e:"Phishing engana o usuário para roubar dados."},
+{t:"No Windows, a extensão .xlsx é de arquivo do:",o:["Word","Excel","PowerPoint","Bloco de Notas"],c:1,e:".xlsx = Excel."},
+{t:"Backup é:",o:["um vírus","uma cópia de segurança dos dados","um navegador","um e-mail"],c:1,e:"Backup = cópia de segurança."},
+{b:"Conhecimentos Gerais / Ética"},
+{t:"Os Correios atuam fortemente no setor de:",o:["mineração","logística e entregas (postal e e-commerce)","educação superior","energia elétrica"],c:1,e:"Correios = serviços postais e logística."},
+{t:"Usar o cargo público em proveito próprio é, segundo a ética:",o:["permitido","vedado","obrigatório","recomendado"],c:1,e:"Vedado — fere a moralidade/impessoalidade."},
+{t:"Tratar o cliente com cortesia e presteza é:",o:["um dever ético do empregado","opcional","proibido","favor pessoal"],c:0,e:"É dever ético (atendimento)."},
+{t:"Atualidades devem ser estudadas:",o:["uma vez por ano","com leitura frequente de notícias","só na véspera","nunca"],c:1,e:"Leitura frequente fixa melhor."}
+];
+  mountList(document.getElementById("quiz-sim2"),SIM2);
+
+  /* ===================== SIMULADO 3 ===================== */
+  var SIM3=[
+{b:"Língua Portuguesa"},
+{t:"“Vendem-se selos” — o “se” é:",o:["índice de indeterminação","partícula apassivadora (selos são vendidos)","objeto direto","conjunção"],c:1,e:"Voz passiva sintética; verbo concorda com “selos”."},
+{t:"Assinale a concordância correta.",o:["Fazem dois anos.","Precisa-se de carteiros.","Aluga-se salas.","Houveram falhas."],c:1,e:"“Precisa-se de” (singular). As demais erram."},
+{t:"O conectivo “portanto” indica:",o:["causa","conclusão","concessão","condição"],c:1,e:"Portanto/logo = conclusão."},
+{t:"Assinale a frase com uso correto de “mau/mal”.",o:["Ele foi mau atendido.","O serviço foi mal.","Ele agiu de má-fé.","Foi um mal funcionário."],c:2,e:"“Má-fé” (adjetivo, feminino de mau). “Mal atendido” (advérbio) e “mau funcionário” (adjetivo)."},
+{b:"Matemática"},
+{t:"Um valor com 20% de desconto ficou R$ 160. O original era:",o:["R$ 180","R$ 200","R$ 190","R$ 210"],c:1,e:"160 = 0,80x → x=200."},
+{t:"A média entre 12, 15 e 18 é:",o:["14","15","16","17"],c:1,e:"45/3 = 15."},
+{t:"2x + 6 = 20. x vale:",o:["6","7","8","5"],c:1,e:"2x=14 → x=7."},
+{t:"Numa razão de 2 para 3, se a 1ª parte é 10, a 2ª é:",o:["12","15","20","18"],c:1,e:"2/3 = 10/x → x=15."},
+{b:"Noções de Informática"},
+{t:"Firewall serve para:",o:["editar textos","controlar o tráfego de rede e bloquear acessos indevidos","fazer planilhas","imprimir"],c:1,e:"Firewall controla o tráfego de rede."},
+{t:"No Excel, para somar de A1 até A5, usa-se:",o:["=MÉDIA(A1:A5)","=SOMA(A1:A5)","=CONT(A1:A5)","=SE(A1:A5)"],c:1,e:"=SOMA soma o intervalo."},
+{t:"Um trojan (cavalo de Troia) é um malware que:",o:["se apresenta como algo útil para enganar o usuário","é um antivírus","organiza a memória","acelera a internet"],c:0,e:"Trojan finge ser útil para invadir."},
+{t:"O campo “Cc” de um e-mail significa:",o:["cópia (todos veem)","cópia oculta","conta corrente","código"],c:0,e:"Cc = com cópia (visível a todos)."},
+{b:"Conhecimentos Gerais / Ética"},
+{t:"Conflito de interesses, na ética pública, deve ser:",o:["escondido","evitado e comunicado","incentivado","ignorado"],c:1,e:"Deve ser evitado e declarado."},
+{t:"A imagem e os bens dos Correios devem ser:",o:["usados livremente para fins pessoais","zelados pelo empregado","vendidos","ignorados"],c:1,e:"O empregado deve zelar por eles."},
+{t:"Discriminação e assédio, segundo o Código de Ética, são:",o:["tolerados","vedados","opcionais","estimulados"],c:1,e:"São condutas vedadas."},
+{t:"Ler jornais e portais confiáveis ajuda em qual matéria?",o:["Matemática","Conhecimentos Gerais (Atualidades)","Crase","Excel"],c:1,e:"Atualidades."}
+];
+  mountList(document.getElementById("quiz-sim3"),SIM3);
+
+  /* ===================== SIMULADO 4 ===================== */
+  var SIM4=[
+{b:"Língua Portuguesa"},
+{t:"Assinale a frase corretamente pontuada.",o:["Ana, traga o malote.","O carteiro, saiu cedo.","Comprou, selos e caixas.","Entregou a carta, ontem à tarde."],c:0,e:"Vocativo isolado por vírgula (A). B separa sujeito/verbo; C/D erram."},
+{t:"“Fazem cinco anos que trabalho aqui” — a forma correta é:",o:["Fazem cinco anos","Faz cinco anos","Fizeram cinco anos","Fazerão cinco anos"],c:1,e:"“Fazer” (tempo) é impessoal: “Faz cinco anos”."},
+{t:"O plural de “cidadão” é:",o:["cidadões","cidadãos","cidadães","cidadans"],c:1,e:"Cidadão → cidadãos."},
+{t:"Assinale o antônimo de “ascender” (subir):",o:["acender","descer","subir","elevar"],c:1,e:"Antônimo de ascender (subir) = descer. “Acender” (fogo) é homófono."},
+{b:"Matemática"},
+{t:"Regra de três: 5 funcionários em 6 dias; 10 funcionários em:",o:["12","3","4","2"],c:1,e:"Inversa: 5×6=10×x → x=3."},
+{t:"40% de um valor é R$ 80. O valor é:",o:["R$ 160","R$ 200","R$ 120","R$ 240"],c:1,e:"0,40x=80 → x=200."},
+{t:"O próximo termo de 3, 6, 12, 24 é:",o:["30","36","48","40"],c:2,e:"×2 → 48."},
+{t:"Numa caixa há 3 azuis e 2 vermelhas. A chance de tirar azul é:",o:["2/5","3/5","1/2","3/2"],c:1,e:"3 em 5 = 3/5."},
+{b:"Noções de Informática"},
+{t:"A nuvem (cloud) permite:",o:["só imprimir","armazenar e acessar arquivos pela internet","apagar o HD","criar vírus"],c:1,e:"Cloud = armazenamento/acesso via internet."},
+{t:"Uma senha forte deve:",o:["ser o seu nome","misturar letras, números e símbolos","ser '1234'","ser a data de nascimento"],c:1,e:"Senha forte mistura tipos de caracteres."},
+{t:"No Word, Ctrl+B (ou Ctrl+N) aplica:",o:["itálico","negrito","sublinhado","cor"],c:1,e:"Negrito (bold)."},
+{t:"Spam é:",o:["um antivírus","mensagem não solicitada, geralmente em massa","um backup","uma planilha"],c:1,e:"Spam = mensagens indesejadas em massa."},
+{b:"Conhecimentos Gerais / Ética"},
+{t:"O e-commerce impulsionou, nos Correios, a atividade de:",o:["mineração","entregas/encomendas","ensino","agricultura"],c:1,e:"E-commerce aumentou as entregas."},
+{t:"Segundo o Código de Ética, a transparência é:",o:["um valor a ser praticado","proibida","opcional","um defeito"],c:0,e:"Transparência é valor ético."},
+{t:"Usar recursos da empresa (veículo, sistema) para fins pessoais é:",o:["permitido","vedado, salvo autorização","obrigatório","recomendado"],c:1,e:"Uso deve ser adequado; para fins pessoais é vedado (salvo autorização)."},
+{t:"A Comissão de Ética dos Correios tem função de:",o:["vender produtos","apoiar a aplicação do Código de Ética","fiscalizar o trânsito","emitir passaportes"],c:1,e:"Apoia a aplicação do Código."}
+];
+  mountList(document.getElementById("quiz-sim4"),SIM4);
+
+  /* ===================== TREINOS (aula + questões) ===================== */
+  var TREINOS=[
+  {mat:"Língua Portuguesa",titulo:"Aula + treino: Crase",aula:"Crase é a fusão da preposição <b>a</b> com o artigo <b>a(s)</b>, só diante de palavra feminina. Teste: troque por masculino — se virar <b>“ao”</b>, tem crase. Nunca antes de verbo, masculino ou pronome.",qs:[
+    {t:"Assinale a crase correta.",o:["Ela se dedica à leitura.","Cheguei à pé.","Refiro-me à ela.","Fui à cavalo."],c:0,e:"“Dedicar-se a”+fem.=à."},
+    {t:"Onde NÃO há crase?",o:["Obedeço à lei.","Vou a pé.","Entreguei à cliente.","Refiro-me à norma."],c:1,e:"“A pé” (masculino/locução sem artigo) — sem crase."},
+    {t:"Assinale a correta.",o:["Pague à vista.","Fui à São Paulo.","Estou disposto à ajudar.","Refiro-me à você."],c:0,e:"“À vista” é locução feminina; as demais erram."},
+    {t:"“Vou ___ reunião das 9h.” Complete:",o:["a","à","há","as"],c:1,e:"Preposição+artigo fem.+hora definida = à."}
+  ]},
+  {mat:"Língua Portuguesa",titulo:"Aula + treino: Concordância e regência",aula:"O verbo concorda com o sujeito. <b>Haver</b>(existir) e <b>fazer</b>(tempo) são impessoais → singular. Regência: <b>assistir a</b> (ver), <b>obedecer a</b>, <b>preferir X a Y</b>.",qs:[
+    {t:"Assinale a correta.",o:["Houveram cartas.","Fazem dez anos.","Existem encomendas.","Chegou os malotes."],c:2,e:"“Existir” concorda; impessoais no singular."},
+    {t:"Assinale a regência correta.",o:["Assisti o filme.","Obedeço às regras.","Prefiro ir do que ficar.","Cheguei no serviço."],c:1,e:"“Obedecer a” (TI)."},
+    {t:"Complete: “____ muitos anos que trabalho aqui.”",o:["Fazem","Faz","Fizeram","Fazerão"],c:1,e:"“Fazer” (tempo) impessoal → “Faz”."},
+    {t:"“Prefiro café ___ chá.” Complete:",o:["do que","a","que","de"],c:1,e:"Preferir X A Y."}
+  ]},
+  {mat:"Matemática",titulo:"Aula + treino: Porcentagem e regra de três",aula:"Aumentar 20% = ×1,20; tirar 20% = ×0,80; aumentos sucessivos multiplicam. Regra de três: veja se as grandezas são diretas (mesmo sentido) ou inversas (sentidos opostos).",qs:[
+    {t:"Dois aumentos de 10% e 20% equivalem a:",o:["30%","32%","33%","28%"],c:1,e:"1,10×1,20=1,32 → 32%."},
+    {t:"25% de 240 é:",o:["50","60","70","48"],c:1,e:"0,25×240=60."},
+    {t:"Se 4 pessoas fazem em 6 h, 8 pessoas fazem em (inversa):",o:["12 h","3 h","4 h","2 h"],c:1,e:"4×6=8×x → x=3."},
+    {t:"Um item de R$ 80 com 25% de desconto:",o:["R$ 55","R$ 60","R$ 65","R$ 70"],c:1,e:"80×0,75=60."}
+  ]},
+  {mat:"Matemática",titulo:"Aula + treino: Juros e raciocínio lógico",aula:"Juros simples: J=C·i·t. Composto: M=C·(1+i)ᵗ. Raciocínio: negar “se p então q” = “p e não q”; sequências têm padrão (soma ou multiplicação constante).",qs:[
+    {t:"R$ 500 a juros simples de 3% ao mês por 4 meses rendem:",o:["R$ 45","R$ 60","R$ 75","R$ 20"],c:1,e:"J=500×0,03×4=60."},
+    {t:"A negação de “Se estudo, passo” é:",o:["se não estudo, não passo","estudo e não passo","passo e não estudo","não estudo ou passo"],c:1,e:"~(p→q)=p∧~q."},
+    {t:"Próximo termo de 2, 4, 8, 16:",o:["24","30","32","20"],c:2,e:"×2 → 32."},
+    {t:"R$ 1.000 a juros compostos de 10% a.m. por 2 meses:",o:["R$ 1.200","R$ 1.210","R$ 1.100","R$ 1.220"],c:1,e:"1000×(1,1)²=1210."}
+  ]},
+  {mat:"Noções de Informática",titulo:"Aula + treino: Windows, Word e Excel",aula:"No Windows: pastas, atalhos (Ctrl+C copiar, Ctrl+V colar, Ctrl+Z desfazer), extensões (.docx Word, .xlsx Excel, .pdf). No Excel: <b>=SOMA</b> soma, <b>=MÉDIA</b> calcula média, <b>=SE</b> testa condição.",qs:[
+    {t:"=MÉDIA(A1:A10) no Excel:",o:["soma os valores","calcula a média","conta as células","classifica"],c:1,e:"=MÉDIA calcula a média."},
+    {t:"Ctrl+Z serve para:",o:["salvar","desfazer","imprimir","copiar"],c:1,e:"Ctrl+Z desfaz."},
+    {t:"A extensão .xlsx é de arquivo do:",o:["Word","Excel","PowerPoint","Bloco de Notas"],c:1,e:".xlsx = Excel."},
+    {t:"Para somar de A1 a A5 no Excel:",o:["=MÉDIA(A1:A5)","=SOMA(A1:A5)","=CONT(A1:A5)","=SE(A1:A5)"],c:1,e:"=SOMA soma o intervalo."}
+  ]},
+  {mat:"Noções de Informática",titulo:"Aula + treino: internet, e-mail e segurança",aula:"Internet: navegadores, links, downloads. E-mail: <b>Para</b>, <b>Cc</b> (todos veem) e <b>Cco</b> (oculto). Segurança: vírus (hospedeiro), worm (autopropaga), trojan (finge ser útil), <b>ransomware</b> (sequestra dados); <b>phishing</b> (golpe); defesa: senha forte, 2 fatores, antivírus, backup.",qs:[
+    {t:"O campo Cco de um e-mail:",o:["mostra o destinatário a todos","oculta o destinatário dos demais","apaga o e-mail","remove anexos"],c:1,e:"Cco = cópia oculta."},
+    {t:"Ransomware:",o:["acelera o PC","criptografa dados e pede resgate","organiza arquivos","é um antivírus"],c:1,e:"Ransomware sequestra dados."},
+    {t:"Phishing é:",o:["um backup","um golpe para roubar dados","um navegador","uma planilha"],c:1,e:"Phishing engana para roubar dados."},
+    {t:"Medida de segurança correta:",o:["repetir senhas","2 fatores de autenticação","clicar em links suspeitos","desativar antivírus"],c:1,e:"2 fatores aumenta a segurança."}
+  ]},
+  {mat:"Conhecimentos Gerais",titulo:"Aula + treino: atualidades e os Correios",aula:"Cai o noticiário recente (Brasil e mundo) e temas ligados aos <b>Correios</b>: são <b>empresa pública federal</b>, atuam em <b>logística/entregas</b>, impulsionados pelo <b>e-commerce</b> e pela digitalização de serviços.",qs:[
+    {t:"Os Correios (ECT) são:",o:["autarquia estadual","empresa pública federal","ONG","fundação privada"],c:1,e:"Empresa pública federal."},
+    {t:"O crescimento do e-commerce impacta os Correios aumentando:",o:["a mineração","as entregas de encomendas","o ensino","a agricultura"],c:1,e:"Mais entregas/encomendas."},
+    {t:"Melhor forma de estudar atualidades:",o:["decorar opiniões","ler notícias com frequência","ignorar","só véspera"],c:1,e:"Leitura frequente."},
+    {t:"Os Correios estão vinculados ao Ministério:",o:["da Saúde","das Comunicações","da Educação","do Esporte"],c:1,e:"Ministério das Comunicações."}
+  ]},
+  {mat:"Ética Correios",titulo:"Aula + treino: Código de Conduta Ética e Integridade dos Correios",aula:"É um documento próprio da empresa. Valores: <b>respeito, honestidade, integridade, transparência, impessoalidade</b>. Deveres: cortesia no atendimento, sigilo das informações, zelo pelos bens/imagem. Vedações: <b>vantagem indevida</b>, uso do cargo em proveito próprio, conflito de interesses, assédio/discriminação. Denúncias: ouvidoria/canal de ética.",qs:[
+    {t:"Receber vantagem indevida em razão do cargo é:",o:["permitido","vedado","obrigatório","incentivado"],c:1,e:"Vedado."},
+    {t:"Zelar pelo sigilo das informações é:",o:["conduta esperada","opcional","proibido","irrelevante"],c:0,e:"Dever ético."},
+    {t:"Conflito de interesses deve ser:",o:["escondido","evitado e comunicado","estimulado","ignorado"],c:1,e:"Evitado e comunicado."},
+    {t:"A gestão da ética nos Correios conta com:",o:["nenhum órgão","a Comissão de Ética","a concorrência","os clientes"],c:1,e:"Comissão de Ética."}
+  ]}
+];
+
+  var tv=document.getElementById("treinos"), lastMat="";
+  TREINOS.forEach(function(tr,ti){
+    if(tr.mat!==lastMat){lastMat=tr.mat; var dv=document.createElement("h3"); dv.className="matdiv"; dv.setAttribute("data-mat",tr.mat); dv.textContent=tr.mat; tv.appendChild(dv);}
+    var card=document.createElement("div"); card.className="card"; card.style.marginTop="16px"; card.setAttribute("data-mat",tr.mat);
+    card.innerHTML='<p class="eyebrow">'+tr.mat+'</p><h3 style="margin-top:0">'+tr.titulo+'</h3><div class="aula">'+tr.aula+'</div><div class="tq" id="treino-'+ti+'"></div>';
+    tv.appendChild(card);
+    mountQs(document.getElementById("treino-"+ti),tr.qs);
+  });
+
+  /* filtro por matéria */
+  var mats=["Todos"]; TREINOS.forEach(function(t){if(mats.indexOf(t.mat)<0)mats.push(t.mat);});
+  var mf=document.getElementById("matfilter");
+  mf.innerHTML=mats.map(function(m,i){return '<button class="'+(i===0?"on":"")+'" data-m="'+m+'">'+m+'</button>';}).join("");
+  mf.addEventListener("click",function(e){
+    var b=e.target.closest("button"); if(!b)return;
+    [].forEach.call(mf.children,function(x){x.classList.remove("on");}); b.classList.add("on");
+    var m=b.getAttribute("data-m");
+    [].forEach.call(tv.children,function(c){c.style.display=(m==="Todos"||c.getAttribute("data-mat")===m)?"":"none";});
+  });
+
+  /* Banco de questões + Simulado aleatório */
+  var BANK=[];
+  [SIM2,SIM3,SIM4].forEach(function(S){S.forEach(function(q){if(q.t)BANK.push({t:q.t,o:q.o,c:q.c,e:q.e});});});
+  TREINOS.forEach(function(tr){tr.qs.forEach(function(q){BANK.push({t:q.t,o:q.o,c:q.c,e:q.e});});});
+  if(window.__SIM1)window.__SIM1.forEach(function(q){BANK.push(q);});
+  var agBtn=document.getElementById("aleatorio-gerar");
+  if(agBtn)agBtn.onclick=function(){
+    var pool=BANK.slice();
+    for(var i=pool.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=pool[i];pool[i]=pool[j];pool[j]=t;}
+    mountList(document.getElementById("quiz-aleatorio"),pool.slice(0,Math.min(40,pool.length)));
+    agBtn.textContent="Gerar outras 40 questões";
+    var s=document.getElementById("aleatorio"); if(s)s.scrollIntoView({behavior:"smooth",block:"start"});
+  };
+
+  /* Banco só de Conhecimentos Específicos */
+  var BANK_ESPEC=[];
+  TREINOS.forEach(function(tr){if(tr.mat==="Língua Portuguesa")tr.qs.forEach(function(q){BANK_ESPEC.push({t:q.t,o:q.o,c:q.c,e:q.e});});});
+  [SIM2,SIM3,SIM4].forEach(function(S){S.filter(function(q){return q.t;}).slice(-10).forEach(function(q){BANK_ESPEC.push({t:q.t,o:q.o,c:q.c,e:q.e});});});
+  if(window.__SIM1)window.__SIM1.slice(-10).forEach(function(q){BANK_ESPEC.push(q);});
+  var egBtn=document.getElementById("espec-gerar");
+  if(egBtn)egBtn.onclick=function(){
+    var pool=BANK_ESPEC.slice();
+    for(var i=pool.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=pool[i];pool[i]=pool[j];pool[j]=t;}
+    mountQs(document.getElementById("espec-list"),pool.slice(0,Math.min(10,pool.length)));
+    egBtn.textContent="Gerar outras 10 de Português";
+    var s=document.getElementById("especifico"); if(s)s.scrollIntoView({behavior:"smooth",block:"start"});
+  };
+})();
+</script>
+<script>
+/* ===== Sincronização do progresso com a nuvem (Supabase) ===== */
+window.__syncReady=false; setTimeout(function(){window.__syncReady=true;},6000);
+window.DMAE_syncPull=async function(){
+  if(!window.sb)return;
+  var uid="";try{uid=localStorage.getItem("dmae:uid")||"";}catch(e){}
+  if(!uid)return;
+  try{
+    var r=await window.sb.from("progress").select("data").eq("user_id",uid).eq("slug",window.DMAE_SLUG||"dmae").maybeSingle();
+    if(r.error)return;
+    if(r.data&&r.data.data){
+      var d=r.data.data;
+      try{
+        if(d.scores)localStorage.setItem(window.DMAE_KEY("scores"),JSON.stringify(d.scores));
+        if(d.caderno)localStorage.setItem(window.DMAE_KEY("cadernoerros"),JSON.stringify(d.caderno));
+        if(d.plano)localStorage.setItem(window.DMAE_KEY("plano"),JSON.stringify(d.plano));
+        if(d.fcsrs)localStorage.setItem(window.DMAE_KEY("fcsrs"),JSON.stringify(d.fcsrs));
+        if(d.daily)localStorage.setItem(window.DMAE_KEY("daily"),JSON.stringify(d.daily));
+      }catch(e){}
+      if(window.renderDesempenho)window.renderDesempenho();
+      if(window.renderCaderno)window.renderCaderno();
+      if(window.renderProxima)window.renderProxima();
+      if(window.DMAE_planoApply)window.DMAE_planoApply();
+      if(window.DMAE_fcApply)window.DMAE_fcApply();
+      if(window.DMAE_dailyApply)window.DMAE_dailyApply();
+      window.__syncReady=true;
+    } else {
+      /* sem linha na nuvem: sobe o que já existir localmente (migração) */
+      window.__syncReady=true;
+      if(window.DMAE_syncPush)window.DMAE_syncPush(true);
+    }
+  }catch(e){}
+};
+(function(){
+  var t=null;
+  window.DMAE_syncPush=function(now){
+    if(!window.sb)return;
+    if(!window.__syncReady&&!now)return;
+    clearTimeout(t);
+    t=setTimeout(function(){
+      var uid="";try{uid=localStorage.getItem("dmae:uid")||"";}catch(e){}
+      if(!uid)return;
+      var scores=[],caderno=[],plano={},fcsrs={},daily={};
+      try{scores=JSON.parse(localStorage.getItem(window.DMAE_KEY("scores"))||"[]");}catch(e){}
+      try{caderno=JSON.parse(localStorage.getItem(window.DMAE_KEY("cadernoerros"))||"[]");}catch(e){}
+      try{plano=JSON.parse(localStorage.getItem(window.DMAE_KEY("plano"))||"{}");}catch(e){}
+      try{fcsrs=JSON.parse(localStorage.getItem(window.DMAE_KEY("fcsrs"))||"{}");}catch(e){}
+      try{daily=JSON.parse(localStorage.getItem(window.DMAE_KEY("daily"))||"{}");}catch(e){}
+      window.sb.from("progress").upsert({user_id:uid,slug:(window.DMAE_SLUG||"dmae"),data:{scores:scores,caderno:caderno,plano:plano,fcsrs:fcsrs,daily:daily},updated_at:new Date().toISOString()},{onConflict:"user_id,slug"}).then(function(){},function(){});
+    }, now?0:900);
+  };
+})();
+</script>
+<script>
+/* ===== Melhorias de aprendizado: modo estudo + meta diária/ofensiva (aditivo) ===== */
+(function(){
+  var st=document.createElement("style");
+  st.textContent=".srs{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}.eopts{margin:6px 0 2px}.eopt{padding:2px 0;color:var(--muted)}.eopt.r{color:var(--green);font-weight:600}.eopt.w{color:var(--red)}.studybar{display:flex;align-items:center;gap:8px;margin:0 0 14px;font-size:14px;flex-wrap:wrap}.studybar input{width:16px;height:16px;accent-color:var(--green)}#hoje-painel{margin:0 0 14px}";
+  document.head.appendChild(st);
+
+  /* ---- meta diária + ofensiva ---- */
+  function DK(){return window.DMAE_KEY("daily");}
+  function dread(){try{return JSON.parse(localStorage.getItem(DK())||"{}");}catch(e){return {};}}
+  function tkey(dt){return dt.getFullYear()+"-"+("0"+(dt.getMonth()+1)).slice(-2)+"-"+("0"+dt.getDate()).slice(-2);}
+  function today(){return tkey(new Date());}
+  function streakOf(o){var s=0,d=new Date();if(!(o[tkey(d)]>0))d.setDate(d.getDate()-1);for(;;){var k=tkey(d);if(o[k]&&o[k]>0){s++;d.setDate(d.getDate()-1);}else break;}return s;}
+  var GOAL=20;
+  window.DMAE_addAnswers=function(n){ if(!n)return; var o=dread(),t=today(); o[t]=(o[t]||0)+n; try{localStorage.setItem(DK(),JSON.stringify(o));}catch(e){} if(window.DMAE_syncPush)window.DMAE_syncPush(); dpanel(); };
+  function dpanel(){
+    var host=document.getElementById("hoje-painel"); if(!host)return;
+    var o=dread(),n=o[today()]||0,s=streakOf(o),pct=Math.min(100,Math.round(n/GOAL*100));
+    host.innerHTML='<div class="cprow"><span>🔥 <b>Ofensiva:</b> '+s+' dia'+(s===1?"":"s")+' seguido'+(s===1?"":"s")+'</span><span class="cbar"><i style="width:'+pct+'%"></i></span><span><b>Hoje:</b> '+n+'/'+GOAL+' questões'+(n>=GOAL?' ✅':'')+'</span></div>';
+  }
+  window.DMAE_dailyApply=dpanel;
+  var prox=document.getElementById("proxima");
+  if(prox&&prox.parentNode){var p=document.createElement("div");p.id="hoje-painel";p.className="desempenho";prox.parentNode.insertBefore(p,prox.nextSibling);}
+  dpanel();
+
+  function markAnswered(q){ if(!q||q.dataset.cnt)return; q.dataset.cnt="1"; window.DMAE_addAnswers(1); }
+
+  /* ---- modo estudo (feedback imediato) ---- */
+  function SK(){return window.DMAE_KEY("studymode");}
+  function studyOn(){try{return localStorage.getItem(SK())==="1";}catch(e){return false;}}
+  var prox2=document.getElementById("proxima");
+  if(prox2&&prox2.parentNode){
+    var bar=document.createElement("label"); bar.className="studybar";
+    var cb=document.createElement("input"); cb.type="checkbox"; cb.checked=studyOn();
+    var sp=document.createElement("span"); sp.innerHTML="<b>Modo estudo</b> — ver o porquê assim que eu respondo (em vez de só no fim). Desligado = modo prova.";
+    bar.appendChild(cb); bar.appendChild(sp);
+    var hp=document.getElementById("hoje-painel");
+    prox2.parentNode.insertBefore(bar,(hp?hp.nextSibling:prox2.nextSibling));
+    cb.onchange=function(){try{localStorage.setItem(SK(),cb.checked?"1":"0");}catch(e){}};
+  }
+  document.addEventListener("change",function(e){
+    var inp=e.target; if(!inp||inp.type!=="radio")return;
+    var q=inp.closest(".q"); if(!q)return;
+    if(!studyOn())return;
+    var expl=q.querySelector(".expl"); if(expl)expl.classList.add("show");
+    var dc=q.getAttribute("data-c");
+    if(dc!==null){
+      var opts=q.querySelectorAll(".opt"), ins=q.querySelectorAll("input");
+      [].forEach.call(opts,function(o){o.classList.remove("right","wrong");});
+      if(opts[+dc])opts[+dc].classList.add("right");
+      var v=[].indexOf.call(ins,inp); if(v!==+dc&&opts[v])opts[v].classList.add("wrong");
+    }
+    markAnswered(q);
+  });
+  /* conta ao corrigir (ambos os motores) */
+  document.addEventListener("click",function(e){
+    var b=e.target.closest(".cor"), b2=(e.target.id==="corrigir"?e.target:null);
+    var btn=b||b2; if(!btn)return;
+    var scope=btn.closest(".card")||document;
+    setTimeout(function(){ [].forEach.call(scope.querySelectorAll(".q"),function(q){ if(q.querySelector("input:checked"))markAnswered(q); }); },30);
+  });
+})();
+</script>
+</body>
+</html>
